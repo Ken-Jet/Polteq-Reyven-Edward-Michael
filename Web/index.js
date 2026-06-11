@@ -498,3 +498,95 @@ const swiper2 = new Swiper ('#swiper-2', {
     speed: 1000,
     loop: true
 })
+
+if(!sessionStorage.getItem('anim8')){
+    gsap.from('#box-17', {
+        opacity : 0,
+        duration : 1 ,
+        y : 200,
+        ease : 'power4.out',
+        scrollTrigger : {
+            trigger : '#box-17', 
+            // markers : true
+        },
+        onComplete () {
+            sessionStorage.setItem('anim8', true)
+        }
+    })
+}
+
+if(!sessionStorage.getItem('anim9')) {
+    var tl8 = gsap.timeline({
+        scrollTrigger : {
+            trigger : '#box-18',
+            // markers : true
+        },
+        onComplete () {
+            sessionStorage.setItem('anim9', true)
+        }
+    })
+
+    tl8.from('#teks-3', {
+        opacity : 0,
+        y : 200,
+        ease : 'power4.out',
+        duration : 1
+    })
+
+    .from('#img-4', {
+        opacity : 0,
+        y : 300,
+        duration : 1,
+        ease : 'power4.out'
+    },'-=0.75')
+
+    .from('#img-3', {
+        opacity : 0,
+        duration : 1,
+        y : -200,
+        ease : 'power4.out'
+    },'-=0.75')
+
+    .add(() => {
+        gsap.to('#img-3', {
+            y: -30,
+            duration: 1,
+            yoyo: true,
+            repeat: -1,
+            ease: 'sine.inOut'
+        });
+    });
+} else {
+    gsap.to('#img-3', {
+        y : -30,
+        duration : 1,
+        yoyo  : true,
+        repeat : -1,
+        ease : 'none'
+    },'-=0.5')
+}
+
+var tl9 = gsap.timeline({
+    scrollTrigger : {
+        trigger : '#box-20', 
+        markers : true
+    }
+})
+
+tl9.from('#box-19',{
+    opacity : 0,
+    duration : 1,
+    ease : 'power4.out',
+    y : 200
+})
+
+.from('#box-all-1', {
+    opacity : 0,
+    duration : 0.75,
+    y : 300,
+    stagger : {
+        ease : 'power4.out',
+        each : 0.20,
+        from : 'random'
+    }
+},'-=0.75')
