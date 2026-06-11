@@ -566,27 +566,32 @@ if(!sessionStorage.getItem('anim9')) {
     },'-=0.5')
 }
 
-var tl9 = gsap.timeline({
-    scrollTrigger : {
-        trigger : '#box-20', 
-        markers : true
-    }
-})
+if(!sessionStorage.getItem('anim10')){
+    var tl9 = gsap.timeline({
+        scrollTrigger : {
+            trigger : '#box-20', 
+            // markers : true
+        },
+        onComplete () {
+            sessionStorage.setItem('anim10', true)
+        }
+    })
 
-tl9.from('#box-19',{
-    opacity : 0,
-    duration : 1,
-    ease : 'power4.out',
-    y : 200
-})
-
-.from('#box-all-1', {
-    opacity : 0,
-    duration : 0.75,
-    y : 300,
-    stagger : {
+    tl9.from('#box-19',{
+        opacity : 0,
+        duration : 1,
         ease : 'power4.out',
-        each : 0.20,
-        from : 'random'
-    }
-},'-=0.75')
+        y : 200
+    })
+
+    .from('#box-all-1', {
+        opacity : 0,
+        duration : 0.75,
+        y : 300,
+        stagger : {
+            ease : 'power4.out',
+            each : 0.20,
+            from : 'random'
+        }
+    },'-=0.75')
+}
