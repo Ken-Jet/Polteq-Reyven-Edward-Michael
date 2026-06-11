@@ -102,47 +102,47 @@ if(!sessionStorage.getItem('tp1')){
         opacity : 0
     })
 
-    .from('.gambar-1', {
+    .from('#gambar-1', {
         opacity : 0,
         duration : 1,
         ease : 'power4.out',
         y : -300,
         onComplete () {
-            gsap.to('.gambar-1',{y : -50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear'})
+            gsap.to('#gambar-1',{y : -50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear'})
         }
     })
-    .from('.gambar-2', {
+    .from('#gambar-2', {
         opacity : 0,
         duration : 1,
         ease : 'power4.out',
         y : -300,
         onComplete () {
-            gsap.to('.gambar-2',{y : -50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear'})
+            gsap.to('#gambar-2',{y : -50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear'})
         }
     },'-=0.75')
-    .from('.gambar-3', {
+    .from('#gambar-3', {
         opacity : 0,
         duration : 1,
         ease : 'power4.out',
         y : 300,
         onComplete () {
-            gsap.to('.gambar-3',{y : 50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear'})
+            gsap.to('#gambar-3',{y : 50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear'})
         }
     },'-=0.75')
-    .from('.gambar-4', {
+    .from('#gambar-4', {
         opacity : 0,
         duration : 1,
         ease : 'power4.out',
         y : 300,
         onComplete () {
-            gsap.to('.gambar-4',{y : 50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear'})
+            gsap.to('#gambar-4',{y : 50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear'})
         }
     },'-=0.75')
 } else {
-    gsap.to('.gambar-1',{y : -50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear'})
-    gsap.to('.gambar-2',{y : -50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear', delay : 0.25})
-    gsap.to('.gambar-3',{y : 50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear', delay : 0.5})
-    gsap.to('.gambar-4',{y : 50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear', delay : 0.75})
+    gsap.to('#gambar-1',{y : -50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear'})
+    gsap.to('#gambar-2',{y : -50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear', delay : 0.25})
+    gsap.to('#gambar-3',{y : 50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear', delay : 0.5})
+    gsap.to('#gambar-4',{y : 50 , yoyo : true, repeat : -1, duration : 1, ease : 'linear', delay : 0.75})
 }
 
 if(!sessionStorage.getItem('tp2')) {

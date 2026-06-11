@@ -1,5 +1,27 @@
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
+gsap.registerPlugin(Flip)
+
+// Function
+function goBiskref() {
+    window.location.pathname = './Web/biskref.html'
+}
+
+function goPolteq (){
+    window.location.href = 'https://www.polteq.ac.id/'
+}
+
+function goEbpc () {
+    window.location.pathname ='./Web/ebpc.html'
+}
+
+function goTp () {
+    window.location.pathname ='./Web/tp.html'
+}
+
+function goPolteqLoc () {
+    window.location.href = 'https://maps.app.goo.gl/vkoQz7V5Ne7s6CF86'
+}
 
 if(!sessionStorage.getItem('anim1')){
     var tl1 =gsap.timeline({
@@ -80,6 +102,43 @@ if(!sessionStorage.getItem('anim2')){
         },
         onComplete : () => {
             sessionStorage.setItem('anim2', 'true');
+
+            var box10 = document.querySelector('.box-6')
+            var target1 = document.getElementById('target1')
+
+            gsap.to('.box-6', {
+                x: () => {
+
+                    const boxRect = box10.getBoundingClientRect()
+                    const targetRect = target1.getBoundingClientRect()
+
+                    return (
+                        (targetRect.left + targetRect.width / 2) -
+                        (boxRect.left + boxRect.width / 2)
+                    )
+
+                },
+
+                y: () => {
+
+                    const boxRect = box10.getBoundingClientRect()
+                    const targetRect = target1.getBoundingClientRect()
+
+                    return (
+                        (targetRect.top + targetRect.height / 2) -
+                        (boxRect.top + boxRect.height / 2)
+                    )
+
+                },
+
+                scrollTrigger : {
+                    trigger : '#scrub1',
+                    scrub : 0.5,
+                    // markers : true,
+                    end: '-50% center',
+                    // start : '-120% bottom'
+                }
+            })
         }
     })
 
@@ -101,6 +160,43 @@ if(!sessionStorage.getItem('anim2')){
         x : 1000,
         ease : 'power4.out'
     },0.3)
+} else {
+    var box10 = document.querySelector('.box-6')
+    var target1 = document.getElementById('target1')
+
+    gsap.to('.box-6', {
+        x: () => {
+
+            const boxRect = box10.getBoundingClientRect()
+            const targetRect = target1.getBoundingClientRect()
+
+            return (
+                (targetRect.left + targetRect.width / 2) -
+                (boxRect.left + boxRect.width / 2)
+            )
+
+        },
+
+        y: () => {
+
+            const boxRect = box10.getBoundingClientRect()
+            const targetRect = target1.getBoundingClientRect()
+
+            return (
+                (targetRect.top + targetRect.height / 2) -
+                (boxRect.top + boxRect.height / 2)
+            )
+
+        },
+
+        scrollTrigger : {
+            trigger : '#scrub1',
+            scrub : 0.5,
+            // markers : true,
+            end: '-50% center',
+            // start : '-120% bottom'
+        }
+    })
 }
 
 if(!sessionStorage.getItem('anim3')){
@@ -230,74 +326,6 @@ const swiper1 = new Swiper ('.swiper1', {
     speed : 4000
 });
 
-var tl5 = gsap.timeline({
-    repeat : -1,
-});
-
-tl5.to('.tim-1', {
-    opacity : 1,
-    x : 50,
-    duration : 1,
-    ease : 'power4.out',
-    stagger : {
-        each : 0.15,
-        from : 'start'
-    },
-})
-.to('.tim-1', {
-    opacity : 0,
-    x : -50,
-    duration : 1,
-    ease : 'power4.out',
-    stagger : {
-        each : 0.15,
-        from : 'start'
-    },
-    delay : 0.75
-})
-tl5.to('.tim-2', {
-    opacity : 1,
-    x : 50,
-    duration : 1,
-    ease : 'power4.out',
-    stagger : {
-        each : 0.15,
-        from : 'start'
-    },
-})
-.to('.tim-2', {
-    opacity : 0,
-    x : -50,
-    duration : 1,
-    ease : 'power4.out',
-    stagger : {
-        each : 0.15,
-        from : 'start'
-    },
-    delay : 0.75
-})
-tl5.to('.tim-3', {
-    opacity : 1,
-    x : 50,
-    duration : 1,
-    ease : 'power4.out',
-    stagger : {
-        each : 0.15,
-        from : 'start'
-    },
-})
-.to('.tim-3', {
-    opacity : 0,
-    x : -50,
-    duration : 1,
-    ease : 'power4.out',
-    stagger : {
-        each : 0.15,
-        from : 'start'
-    },
-    delay : 0.75
-})
-
 if(!sessionStorage.getItem('anim5')){
     var tl6 = gsap.timeline({
         scrollTrigger : {
@@ -419,3 +447,54 @@ function bar1 (id) {
         }
     }
 }
+
+if (!sessionStorage.getItem('anim7')){
+    var tl7 = gsap.timeline({
+        // paused : true ,
+        scrollTrigger : {
+            trigger : '#box-16',
+            // markers : true,
+            start : '50% bottom'
+        },
+
+        onComplete () {
+            sessionStorage.setItem('anim7' , true)
+        }
+    })
+
+    tl7.from('#box-15', {
+        x : 1500,
+        duration : 1,
+        ease : 'power4.out'
+    })
+
+    .from('#teks-2', {
+        opacity : 0,
+        duration : 1
+    }, 0.75)
+}
+
+const swiper2 = new Swiper ('#swiper-2', {
+    direction : 'horizontal',
+    effect: 'creative',
+
+    creativeEffect: {
+        prev: {
+            translate: ['-100%', 0, 0],
+            opacity: 0
+        },
+
+        next: {
+            translate: ['100%', 0, 0],
+            opacity: 0
+        }
+    },
+
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
+
+    speed: 1000,
+    loop: true
+})
