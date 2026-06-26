@@ -1,20 +1,25 @@
 gsap.registerPlugin(SplitText)
 
-document.querySelector('.bulat-1').addEventListener('mouseenter', () => {
-        gsap.to('.bulat-1',{
-            duration : 1,
-            opacity : 1,
-            ease : 'power4.out'
-        })
-    })
+// Function
+function goBiskref() {
+    window.location.pathname = './Web/biskref.html'
+}
 
-document.querySelector('.bulat-1').addEventListener('mouseleave', () => {
-    gsap.to('.bulat-1',{
-        duration : 1,
-        opacity : 0,
-        ease : 'power4.out'
-    })
-})
+function goPolteq (){
+    window.location.href = 'https://www.polteq.ac.id/'
+}
+
+function goEbpc () {
+    window.location.pathname ='./Web/ebpc.html'
+}
+
+function goTp () {
+    window.location.pathname ='./Web/tp.html'
+}
+
+function goPolteqLoc () {
+    window.location.href = 'https://maps.app.goo.gl/vkoQz7V5Ne7s6CF86'
+}
 
 if(!sessionStorage.getItem('ebpc1')){
     var tl1 = gsap.timeline({
@@ -775,3 +780,50 @@ if(!sessionStorage.getItem('ebpc6')){
         y : 200
     },'=-0.75')
 }
+
+// Alpine
+document.addEventListener('alpine:init', () => {
+
+    // Parent Dropdown
+
+    Alpine.data('mode', () => ({
+        mode : null
+    }))
+
+    // Child Dropdown
+
+    Alpine.data('dropdown', (nameMode) => ({
+        status : false,
+        name : nameMode,
+
+        init () {
+            gsap.set(this.$refs.menu, {
+                autoAlpha : 0
+            })
+
+            this.$watch('mode', (value) => {
+                if(value == this.name){
+                    gsap.to(this.$refs.menu, {
+                        duration : 0.5,
+                        autoAlpha : 1,
+                        overwrite : true
+                    })
+                } else {
+                    gsap.to(this.$refs.menu, {
+                        duration : 0.5,
+                        autoAlpha : 0,
+                        overwrite : true
+                    })
+                }
+            })
+        },
+
+        openToogle () {
+            this.mode = this.name
+        },
+
+        closeToogle () {
+            this.mode = null
+        }
+    }))
+})

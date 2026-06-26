@@ -6,50 +6,51 @@
     <title>Teknologi Pangan</title>
     <link rel="stylesheet" href="src/output.css">
 </head>
-<body class="bg-[#BDE1FF] overflow-x-hidden">
-    <div class="sticky top-0 flex flex-row justify-between pt-2 align-center bg-white shadow-lg pb-[10px] box-1 z-1000">
-        <div class="relative flex flex-row">
-            <img src="img/logo polteq.jpg" alt="" class="w-[100px] h-[75px] bg-cover relative left-5">
-            <div class="relative flex flex-col justify-center">
-                <h4 class="font-DSansBold ml-10 text-[25px]">Politeknik Tonggak Equator</h4>
-                <p class="font-DSans ml-10 text-[18px]">POLTEQ Means Quality</p>
+<body class="bg-[#bbd2fa] overflow-x-hidden">
+    <header class="sticky top-0 bg-white shadow-lg pb-[10px] box-1 z-1000 pt-2">
+        <div class="flex flex-row justify-between">
+            <div class="relative flex flex-row cursor-pointer" onclick="goPolteq()">
+                <img src="img/logo polteq.jpg" alt="" class="w-[100px] h-[75px] bg-cover relative left-5">
+                <div class="relative flex flex-col justify-center">
+                    <h1 class="font-DSansBold ml-10 text-[25px]">Politeknik Tonggak Equator</h1>
+                    <p class="font-DSans ml-10 text-[18px]">POLTEQ Means Quality</p>
+                </div>
             </div>
-        </div>
-        <div class="mr-10 relative flex flex row items-center justify-center gap-15">
-            <p class="font-DSansBold text-[18px] hover:underline cursor-pointer">Home</p>
-            <p class="font-DSansBold text-[18px] hover:underline cursor-pointer">Tentang</p>
-            <div class="" x-data="bar1('studi')">
-                <p class="font-DSansBold text-[18px] hover:underline cursor-pointer"  @click.stop="toggle()">Program Studi</p>
-
-                <div class="relative">
-                    <div class="absolute top-8.5 flex flex-col gap-2 w-[130px] h-[0px] bg-white overflow-hidden" x-ref="bar1" @click.outside = 'close()'>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">EBPC</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">BisKref</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">TPTP</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">TP</p>
+            <div class="mr-20 relative flex flex row items-center justify-center gap-15" x-data="mode()">
+                <div class="flex flex-row items-center justify-center gap-15">
+                    <div class="">
+                        <a class="font-DSansBold text-[18px] hover:underline cursor-pointer" href="./index.html">Home</a>
+                    </div>
+                    <div class="relative flex flex-col" x-data="dropdown('tentang')">
+                        <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Tentang</p>
+                        <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-27 flex flex-col text-white p-2 font-DSansBold text-[15px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
+                            <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=struktur&&action=index">Struktur Organisasi</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="#box-17">Visi Misi</a>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col" x-data="dropdown('prodi')">
+                        <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Program Studi</p>
+                        <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-67 flex flex-col text-white p-2 font-DSansBold text-[14px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="goEbpc()">English for Bussiness and Proffesional Communication</p>
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="goBiskref()">Bisnis Kreatif</p>
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="goTp()">Teknologi Pangan</p>
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="">Teknologi Produksi Tanaman Perkebunan</p>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col" x-data="dropdown('informasi')">
+                        <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Informasi</p>
+                        <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-30 flex flex-col text-white p-2 font-DSansBold text-[14px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
+                            <a class="hover:bg-red-500 cursor-pointer">Berita</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=fasilitas">Fasilitas</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=pmb">PMB dan Beasiswa</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="" x-data="bar1('Info')">
-                <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @click.stop="toggle()">Informasi</p>
-
-                <div class="relative">
-                    <div class="absolute top-8.5 flex flex-col gap-2 w-[100px] h-[0px] bg-white overflow-hidden" x-ref="bar1" @click.outside = 'close()'>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">SPP Kampus</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">Fasilitas</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">Struktur Organisasi</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">Sejarah</p>
-                    </div>
-                </div>
-            </div>
-            <div class="relative flex flex-row z-2 justify-center items-center">
-                <div class="absolute outline-[#1a0278] w-[40px] h-[40px] outline-3 z-1 rounded-[50%] opacity-0 bulat-1"></div>
-                <p class="text-[25px]">&#9776;</p>
-            </div>
         </div>
-    </div>
+    </header>
 
-    <div class="bg-[url(./../img/kelas-polteq.jpg)] w-screen h-screen bg-cover opacity-[0.12] bg-fixed fixed inset -z-10"></div>
+    <div class="bg-[url(./../img/kelas-polteq.jpg)] w-full h-screen bg-cover opacity-[0.12] bg-fixed fixed inset-0 -z-10"></div>
 
     <div class="page-center h-160">
         <div class="section-center-row gap-10">
@@ -57,7 +58,7 @@
             <div class="w-[700px] mb-30" id="lottie1"></div>
         </div>
 
-        <div class="overlay-full">
+        <div class="w-full h-screen">
             <img src="img/tp-13.png" alt="" class="image-simbol-1 top-[54px] left-[346px] -rotate-20" id="gambar-1">
             <img src="img/tp-14.png" alt="" class="image-simbol-1 top-[54px] left-[134px] rotate-17" id="gambar-2">
             <img src="img/tp-15.png" alt="" class="image-simbol-1 bottom-[108px] left-[576px] rotate-21" id="gambar-3">
@@ -138,10 +139,10 @@
         </div>
 
         <div class="absolute size-full">
-            <img src="img/tp-17.png" alt="" class="image-simbol-1 rotate-6 left-[5%] top-[3%]">
-            <img src="img/tp-18.png" alt="" class="image-simbol-1 top-0 right-[5%] top-[3%] -rotate-6">
-            <img src="img/tp-19.png" alt="" class="image-simbol-1 bottom-[-50px] left-[5%]">
-            <img src="img/tp-20.png" alt="" class="image-simbol-1 bottom-[-50px] right-[3%] rotate-25">
+            <img src="img/tp-17.png" alt="" class="image-simbol-1 rotate-6 left-[5%] top-[3%]" id="gambar-group-1">
+            <img src="img/tp-18.png" alt="" class="image-simbol-1 top-0 right-[5%] top-[3%] -rotate-6" id="gambar-group-1">
+            <img src="img/tp-19.png" alt="" class="image-simbol-1 bottom-[-50px] left-[5%]" id="gambar-group-1">
+            <img src="img/tp-20.png" alt="" class="image-simbol-1 bottom-[-50px] right-[3%] rotate-25" id="gambar-group-1">
         </div>
     </div>
 
@@ -158,71 +159,72 @@
         <button class="mt-15 bg-[#001ba3] text-white font-DSansBold p-3.5 text-[25px] rounded-[15px] hover:cursor-pointer box-10"> Daftar Sekarang</button>
     </div>
 
-    <div class="bg-[#001ba3] w-full h-[300px] mt-30 relative flex flex-row font-DSans text-white gap-15 pl-5 pt-3">
-        <div class="relative flex flex-col gap-3">
-            <p class="text-[25px] font-DSansBold">Hubungi Kami</p>
+    <footer>
+        <div class="bg-[#001ba3] w-full h-[300px] mt-50 relative flex flex-row font-DSans text-white gap-15 pl-5 pt-3">
             <div class="relative flex flex-col gap-3">
-                <div class="relative flex flex-row gap-3">
-                    <img src="img/Website.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
-                    <a href="https://polteq.ac.id" class="">polteq.ac.id</a>
+                <p class="text-[25px] font-DSansBold">Hubungi Kami</p>
+                <div class="relative flex flex-col gap-3">
+                    <div class="relative flex flex-row gap-3" onclick="goPolteq()">
+                        <img src="img/Website.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="https://polteq.ac.id" class="">polteq.ac.id</a>
+                    </div>
+                    <div class="relative flex flex-row gap-3">
+                        <img src="img/kontak.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="" class="">+62-851-6757-5775</a>
+                    </div>
+                    <div class="relative flex flex-row gap-3 items-center" onclick="goPolteqLoc()">
+                        <img src="img/location.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="https://maps.app.goo.gl/vkoQz7V5Ne7s6CF86" class="">Jl. Fatimah <br>No.1-2, Pontianak</a>
+                    </div>
+                    <div class="relative flex flex-row gap-3 items-center">
+                        <img src="img/email.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="" class="">pmb@polteq.ac.id</a>
+                    </div>
                 </div>
-                <div class="relative flex flex-row gap-3">
-                    <img src="img/kontak.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
-                    <a href="" class="">+62-851-6757-5775</a>
+            </div>
+
+            <div class="relative flex flex-col gap-3">
+                <p class="text-[25px] font-DSansBold">Media Sosial</p>
+                <div class="relative flex flex-col gap-3">
+                    <div class="relative flex flex-row gap-3">
+                        <img src="img/instagram.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">@politeknik_tonggak_equator</a>
+                    </div>
+                    <div class="relative flex flex-row gap-3">
+                        <img src="img/tiktok.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">@polteq</a>
+                    </div>
+                    <div class="relative flex flex-row gap-3">
+                        <img src="img/youtube.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="https://www.youtube.com/@polteqpontianak" class="">Politeknik Tonggak Equator</a>
+                    </div>
                 </div>
-                <div class="relative flex flex-row gap-3 items-center">
-                    <img src="img/location.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
-                    <a href="" class="">Jl. Fatimah <br>No.1-2, Pontianak</a>
+            </div>
+
+            <div class="">
+                <p class="text-[25px] font-DSansBold">Informasi</p>
+                <div class="relative flex flex-col gap-3">
+                    <a href="https://www.polteq.ac.id/index.php?page=pmb" class="">PMB dan Beasiswa</a>
+                    <a href="https://www.polteq.ac.id/index.php?page=fasilitas" class="">Fasilitas</a>
+                    <a href="" class="">Berita</a>
                 </div>
-                <div class="relative flex flex-row gap-3 items-center">
-                    <img src="img/email.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
-                    <a href="" class="">pmb@polteq.ac.id</a>
+            </div>
+
+            <div class="">
+                <p class="text-[25px] font-DSansBold">Program Studi</p>
+                <div class="relative flex flex-col gap-3">
+                    <a href="./ebpc.html" class="">English For Business and Proffesional Communication</a>
+                    <a href="./biskref.html" class="">Bisnis Kreatif</a>
+                    <a href="./tp.html" class="">Tenkologi Pangan</a>
+                    <a href="" class="">Teknologi Produksi Tanaman Perkebunan</a>
                 </div>
             </div>
         </div>
 
-        <div class="relative flex flex-col gap-3">
-            <p class="text-[25px] font-DSansBold">Media Sosial</p>
-            <div class="relative flex flex-col gap-3">
-                <div class="relative flex flex-row gap-3">
-                    <img src="img/instagram.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
-                    <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">@politeknik_tonggak_equator</a>
-                </div>
-                <div class="relative flex flex-row gap-3">
-                    <img src="img/tiktok.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
-                    <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">@polteq</a>
-                </div>
-                <div class="relative flex flex-row gap-3">
-                    <img src="img/youtube.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
-                    <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">Politeknik Tonggak Equator</a>
-                </div>
-            </div>
+        <div class="bg-[#001ba3] w-full h-full font-DSans text-white relative flex justify-center items-center pb-5">
+                <p class="">&copy; Copyright by Politeknik Tonggak Equator. All right reserved.</p>
         </div>
-
-        <div class="">
-            <p class="text-[25px] font-DSansBold">Informasi</p>
-            <div class="relative flex flex-col gap-3">
-                <a href="" class="">Harga</a>
-                <a href="" class="">Fasilitas</a>
-                <a href="" class="">Struktur Organisasi</a>
-                <a href="" class="">Sejarah</a>
-            </div>
-        </div>
-
-        <div class="">
-            <p class="text-[25px] font-DSansBold">Program Studi</p>
-            <div class="relative flex flex-col gap-3">
-                <a href="" class="">English For Business and Proffesional Communication</a>
-                <a href="" class="">Bisnis Kreatif</a>
-                <a href="" class="">Tenkologi Pangan</a>
-                <a href="" class="">Teknologi Produksi Tanaman Perkebunan</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="bg-[#001ba3] w-full h-full font-DSans text-white relative flex justify-center items-center pb-5">
-            <p class="">&copy; Copyright by Politeknik Tonggak Equator. All right reserved.</p>
-    </div>
+    </footer>
 
     <!--Alpine-->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>    
