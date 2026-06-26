@@ -8,44 +8,45 @@
     <link rel="stylesheet" href="src/output.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
 <body class="overflow-x-hidden">
-    <header class="sticky top-0 flex flex-row justify-between mt-3 align-center bg-white shadow-lg pb-[10px] box-1 z-1000">
-        <div class="relative flex flex-row cursor-pointer" onclick="goPolteq()">
-            <img src="img/logo polteq.jpg" alt="" class="w-[100px] h-[75px] bg-cover relative left-5">
-            <div class="relative flex flex-col justify-center">
-                <h1 class="font-DSansBold ml-10 text-[25px]">Politeknik Tonggak Equator</h1>
-                <p class="font-DSans ml-10 text-[18px]">POLTEQ Means Quality</p>
-            </div>
-        </div>
-        <div class="mr-10 relative flex flex row items-center justify-center gap-15">
-            <p class="font-DSansBold text-[18px] hover:underline cursor-pointer">Home</p>
-            <p class="font-DSansBold text-[18px] hover:underline cursor-pointer">Tentang</p>
-            <div class="" x-data="bar1('studi')">
-                <p class="font-DSansBold text-[18px] hover:underline cursor-pointer"  @click.stop="toggle()">Program Studi</p>
-
-                <div class="relative">
-                    <div class="absolute top-8.5 flex flex-col gap-2 w-[130px] h-[0px] bg-white overflow-hidden" x-ref="bar1" @click.outside = 'close()'>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">EBPC</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">BisKref</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">TPTP</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">TP</p>
-                    </div>
+    <header class="sticky top-0 bg-white shadow-lg pb-[10px] box-1 z-1000">
+        <div class="flex flex-row justify-between mt-3">
+            <div class="relative flex flex-row cursor-pointer" onclick="goPolteq()">
+                <img src="img/logo polteq.jpg" alt="" class="w-[100px] h-[75px] bg-cover relative left-5">
+                <div class="relative flex flex-col justify-center">
+                    <h1 class="font-DSansBold ml-10 text-[25px]">Politeknik Tonggak Equator</h1>
+                    <p class="font-DSans ml-10 text-[18px]">POLTEQ Means Quality</p>
                 </div>
             </div>
-            <div class="" x-data="bar1('Info')">
-                <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @click.stop="toggle()">Informasi</p>
-
-                <div class="relative">
-                    <div class="absolute top-8.5 flex flex-col gap-2 w-[100px] h-[0px] bg-white overflow-hidden" x-ref="bar1" @click.outside = 'close()'>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">SPP Kampus</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">Fasilitas</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">Struktur Organisasi</p>
-                        <p class="font-DSansBold cursor-pointer text-[13px] opacity-0">Sejarah</p>
+            <div class="mr-20 relative flex flex row items-center justify-center gap-15" x-data="mode()">
+                <div class="flex flex-row items-center justify-center gap-15">
+                    <div class="">
+                        <a class="font-DSansBold text-[18px] hover:underline cursor-pointer" href="./index.html">Home</a>
+                    </div>
+                    <div class="relative flex flex-col" x-data="dropdown('tentang')">
+                        <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Tentang</p>
+                        <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-27 flex flex-col text-white p-2 font-DSansBold text-[15px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
+                            <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=struktur&&action=index">Struktur Organisasi</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="#box-17">Visi Misi</a>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col" x-data="dropdown('prodi')">
+                        <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Program Studi</p>
+                        <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-67 flex flex-col text-white p-2 font-DSansBold text-[14px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="goEbpc()">English for Bussiness and Proffesional Communication</p>
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="goBiskref()">Bisnis Kreatif</p>
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="goTp()">Teknologi Pangan</p>
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="">Teknologi Produksi Tanaman Perkebunan</p>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col" x-data="dropdown('informasi')">
+                        <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Informasi</p>
+                        <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-30 flex flex-col text-white p-2 font-DSansBold text-[14px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
+                            <a class="hover:bg-red-500 cursor-pointer">Berita</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=fasilitas">Fasilitas</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=pmb">PMB dan Beasiswa</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="relative flex flex-row z-2 justify-center items-center">
-                <div class="absolute outline-[#1a0278] w-[40px] h-[40px] outline-3 z-1 rounded-[50%] opacity-0 bulat-1"></div>
-                <p class="text-[25px]">&#9776;</p>
             </div>
         </div>
     </header>
@@ -111,7 +112,7 @@
             <div class="w-full mt-50" id="teks-3"><h1 class="font-DSansBold text-[#001ba3] text-[60px] text-center">Lokasi <span class="text-red-700">POLTEQ</span></h1></div>
 
             <div class="w-full flex flex-col justify-center items-center gap-110 mt-15">
-                <div class="w-[45%] relative">
+                <div class="w-[45%] relative cursor-pointer" onclick="goPolteqLoc()">
                     <img src="./img/polteq-location.png" alt="" class="absolute z-1 w-[120px] object-contain top-[-45px] left-36" id="img-3">
                     <img src="./img/Screenshot 2026-06-01 141634.png" alt="" class="absolute object-cover w-full" id="img-4">
                 </div>
@@ -289,10 +290,9 @@
         <div class="">
             <p class="text-[25px] font-DSansBold">Informasi</p>
             <div class="relative flex flex-col gap-3">
-                <a href="" class="">Harga</a>
-                <a href="" class="">Fasilitas</a>
-                <a href="" class="">Struktur Organisasi</a>
-                <a href="" class="">Sejarah</a>
+                <a href="https://www.polteq.ac.id/index.php?page=pmb" class="">PMB dan Beasiswa</a>
+                <a href="https://www.polteq.ac.id/index.php?page=fasilitas" class="">Fasilitas</a>
+                <a href="" class="">Berita</a>
             </div>
         </div>
 

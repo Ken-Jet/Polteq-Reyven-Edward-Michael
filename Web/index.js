@@ -36,22 +36,6 @@ if(!sessionStorage.getItem('anim1')){
         }
     });
 
-    document.querySelector('.bulat-1').addEventListener('mouseenter', () => {
-        gsap.to('.bulat-1',{
-            duration : 1,
-            opacity : 1,
-            ease : 'power4.out'
-        })
-    })
-
-    document.querySelector('.bulat-1').addEventListener('mouseleave', () => {
-        gsap.to('.bulat-1',{
-            duration : 1,
-            opacity : 0,
-            ease : 'power4.out'
-        })
-    })
-
     tl1.from('.box-1',{
         duration : 1.25,
         y : -100,
@@ -71,28 +55,6 @@ if(!sessionStorage.getItem('anim1')){
         ease : 'power4.out'
     },'-=0.75')
 
-} else {
-    // gsap.set('.box-1', {
-    //             position : 'sticky',
-    //             top : 0,
-    //             zIndex : 1000
-    // })
-
-    document.querySelector('.bulat-1').addEventListener('mouseenter', () => {
-        gsap.to('.bulat-1',{
-            duration : 1,
-            opacity : 1,
-            ease : 'power4.out'
-        })
-    })
-
-    document.querySelector('.bulat-1').addEventListener('mouseleave', () => {
-        gsap.to('.bulat-1',{
-            duration : 1,
-            opacity : 0,
-            ease : 'power4.out'
-        })
-    })
 }
 
 if(!sessionStorage.getItem('anim2')){
@@ -365,89 +327,6 @@ if(!sessionStorage.getItem('anim5')){
     }, '-=0.5')
 }
 
-//GSDevTools.create({animation : tl6});
-
-//Ux animation
-
-document.addEventListener('alpine:init', () => {
-    Alpine.store('dropdown', {
-        active: null
-    })
-})
-
-function bar1 (id) {
-    return {
-        id,
-        open : false ,
-        tl : null,
-        init () {
-            this.$nextTick (() => {
-                this.tl = gsap.timeline({paused : true})
-
-                .to(this.$refs.bar1 ,{
-                    height : 'auto',
-                    duration : 0.25,
-                    padding : '10px'
-                })
-
-                .fromTo(this.$refs.bar1.children, {
-                    x : 300,
-                    opacity : 0
-                },{
-                    x : 0,
-                    duration : 0.5,
-                    opacity : 1,
-                    ease : 'power4.out',
-                    stagger : 0.2,
-                })
-            })
-
-            this.$watch(
-                () => Alpine.store('dropdown').active,
-                value => {
-                    if (value !== this.id && this.open) {
-                        this.forceClose()
-                    }
-                }
-            )
-
-            this.$watch('open' , value => {
-                value ? this.tl.play() : this.tl.reverse()
-            })
-        },
-        toggle () {
-             const store = Alpine.store('dropdown')
-
-            if (this.open) {
-                this.close()
-                store.active = null
-            } else {
-                this.open = true
-                store.active = this.id
-            }
-        },
-        close () {
-            this.open = false
-        },
-        forceClose() {
-            this.tl.pause(0)
-
-            gsap.set(this.$refs.menu, {
-                height: 0,
-                padding: 0
-            })
-
-            gsap.set(this.$refs.menu.children, {
-                opacity: 0,
-                x: 300,
-                scale: 0
-            })
-
-            this.open = false
-        }
-    }
-}
-
 if (!sessionStorage.getItem('anim7')){
     var tl7 = gsap.timeline({
         // paused : true ,
@@ -595,3 +474,50 @@ if(!sessionStorage.getItem('anim10')){
         }
     },'-=0.75')
 }
+
+// Alpine
+document.addEventListener('alpine:init', () => {
+
+    // Parent Dropdown
+
+    Alpine.data('mode', () => ({
+        mode : null
+    }))
+
+    // Child Dropdown
+
+    Alpine.data('dropdown', (nameMode) => ({
+        status : false,
+        name : nameMode,
+
+        init () {
+            gsap.set(this.$refs.menu, {
+                autoAlpha : 0
+            })
+
+            this.$watch('mode', (value) => {
+                if(value == this.name){
+                    gsap.to(this.$refs.menu, {
+                        duration : 0.5,
+                        autoAlpha : 1,
+                        overwrite : true
+                    })
+                } else {
+                    gsap.to(this.$refs.menu, {
+                        duration : 0.5,
+                        autoAlpha : 0,
+                        overwrite : true
+                    })
+                }
+            })
+        },
+
+        openToogle () {
+            this.mode = this.name
+        },
+
+        closeToogle () {
+            this.mode = null
+        }
+    }))
+})
