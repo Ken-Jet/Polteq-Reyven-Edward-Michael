@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BISKREF</title>
     <link rel="stylesheet" href="src/output.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./img/POLTEQ-BG.webp">
 </head>
 <body class="bg-[#FFDA24] overflow-hidden relative flex flex-col min-h-screen">
     <header class="sticky top-0 bg-white shadow-lg pb-[10px] box-1 z-1000">
         <div class="flex flex-row justify-between mt-3">
             <div class="relative flex flex-row cursor-pointer" onclick="goPolteq()">
-                <img src="img/logo polteq.jpg" alt="" class="w-[100px] h-[75px] bg-cover relative left-5">
+                <img src="img/logo polteq.webp" alt="" class="w-[100px] h-[75px] bg-cover relative left-5">
                 <div class="relative flex flex-col justify-center">
                     <h1 class="font-DSansBold ml-10 text-[25px]">Politeknik Tonggak Equator</h1>
                     <p class="font-DSans ml-10 text-[18px]">POLTEQ Means Quality</p>
@@ -21,14 +24,14 @@
                     <div class="">
                         <a class="font-DSansBold text-[18px] hover:underline cursor-pointer" href="./index.html">Home</a>
                     </div>
-                    <div class="relative flex flex-col" x-data="dropdown('tentang')">
+                    <div class="relative flex flex-col" x-data="dropdown('tentang')" x-cloak>
                         <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Tentang</p>
                         <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-27 flex flex-col text-white p-2 font-DSansBold text-[15px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
                             <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=struktur&&action=index">Struktur Organisasi</a>
-                            <a class="hover:bg-red-500 cursor-pointer" href="#box-17">Visi Misi</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="./index.html#box-17">Visi Misi</a>
                         </div>
                     </div>
-                    <div class="relative flex flex-col" x-data="dropdown('prodi')">
+                    <div class="relative flex flex-col" x-data="dropdown('prodi')" x-cloak>
                         <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Program Studi</p>
                         <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-67 flex flex-col text-white p-2 font-DSansBold text-[14px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
                             <p class="hover:bg-red-500 cursor-pointer" onclick="goEbpc()">English for Bussiness and Proffesional Communication</p>
@@ -37,7 +40,7 @@
                             <p class="hover:bg-red-500 cursor-pointer" onclick="">Teknologi Produksi Tanaman Perkebunan</p>
                         </div>
                     </div>
-                    <div class="relative flex flex-col" x-data="dropdown('informasi')">
+                    <div class="relative flex flex-col" x-data="dropdown('informasi')" x-cloak>
                         <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Informasi</p>
                         <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-30 flex flex-col text-white p-2 font-DSansBold text-[14px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
                             <a class="hover:bg-red-500 cursor-pointer">Berita</a>
@@ -50,7 +53,7 @@
         </div>
     </header>
 
-    <div class="bg-[url(./../img/kelas-polteq.jpg)] w-screen h-screen bg-cover opacity-[0.12] bg-fixed fixed inset -z-10"></div>
+    <div class="bg-[url(./../img/kelas-polteq.webp)] w-screen h-screen bg-cover opacity-[0.12] bg-fixed fixed inset -z-10"></div>
 
     <div class=" w-full h-full text-center text-[177px] mt-45 leading-none relative flex items-center justify-center">
             <p class="font-Knewave absolute mt-50 z-3 text-white text-stroke-1 teks-1">Bisnis <br> Kreatif</p>
@@ -61,20 +64,20 @@
     <p class="text-center font-Knewave mt-80 text-[33px] text-white text-stroke-6 teks-2">Kejar <span class="text-stroke-4">Karir Kreatif</span> di <span class="text-stroke-5">Bisnis Kreatif</span></p>
 
     <div class="absolute w-full h-full">
-        <img src="img/Lampu.png" alt="" class="w-[156px] h-[162px] bg-contain absolute top-[147px] left-[110px] -rotate-30 gambar-1">
-        <img src="img/Tas.png" alt="" class="w-[145px] h-[125px] bg-contain absolute top-[377px] left-[246px] rotate-12 gambar-2">
-        <img src="img/Uang.png" alt="" class="w-[114px] h-[100px] bg-contain absolute top-[525px] left-[82px] -rotate-18 gambar-3">
-        <img src="img/Chart.png" alt="" class="w-[124px] h-[133px] bg-contain absolute top-[113px] left-[321px] -rotate-25 gambar-4">
-        <img src="img/Garis.png" alt="" class="w-[163px] h-[144px] bg-contain absolute top-[320px] right-[106px] -rotate-7 gambar-5">
-        <img src="img/Hp.png" alt="" class="w-[161px] h-[160px] bg-contain absolute top-[496px] right-[257px] -rotate-15 gambar-6">
-        <img src="img/Kreatif.png" alt="" class="w-[145px] h-[159px] bg-contain absolute top-[113px] right-[257px] rotate-25 gambar-7">
-        <img src="img/Video.png" alt="" class="w-[118px] h-[118px] bg-contain absolute top-[551px] right-[75px] rotate-30 gambar-8">
-        <img src="img/Uang.png" alt="" class="w-[114px] h-[100px] bg-contain absolute top-[153px] right-[71px] rotate-25 gambar-9">
+        <img src="img/Lampu.webp" alt="" class="w-[156px] h-[162px] bg-contain absolute top-[147px] left-[110px] -rotate-30 gambar-1">
+        <img src="img/Tas.webp" alt="" class="w-[145px] h-[125px] bg-contain absolute top-[377px] left-[246px] rotate-12 gambar-2">
+        <img src="img/Uang.webp" alt="" class="w-[114px] h-[100px] bg-contain absolute top-[525px] left-[82px] -rotate-18 gambar-3">
+        <img src="img/Chart.webp" alt="" class="w-[124px] h-[133px] bg-contain absolute top-[113px] left-[321px] -rotate-25 gambar-4">
+        <img src="img/Garis.webp" alt="" class="w-[163px] h-[144px] bg-contain absolute top-[320px] right-[106px] -rotate-7 gambar-5">
+        <img src="img/Hp.webp" alt="" class="w-[161px] h-[160px] bg-contain absolute top-[496px] right-[257px] -rotate-15 gambar-6">
+        <img src="img/Kreatif.webp" alt="" class="w-[145px] h-[159px] bg-contain absolute top-[113px] right-[257px] rotate-25 gambar-7">
+        <img src="img/Video.webp" alt="" class="w-[118px] h-[118px] bg-contain absolute top-[551px] right-[75px] rotate-30 gambar-8">
+        <img src="img/Uang.webp" alt="" class="w-[114px] h-[100px] bg-contain absolute top-[153px] right-[71px] rotate-25 gambar-9">
     </div>
 
     <div class="w-full h-screen mt-20 pl-5 box-2 relative flex justify-center items-center">
         <div class="w-full h-full relative flex flex-row">
-            <img src="img/biskref-1.png" alt="" class="w-[655px] h-[655px] gambar-10">
+            <img src="img/biskref-1.webp" alt="" class="w-[655px] h-[655px] gambar-10">
             <div class="w-full h-auto relative flex flex-col">
                 <div class="relative flex flex-row gap-4.5 text-[60px] text-white mt-30 h-[150px]">
                     <p class="font-Knewave text-stroke-1 teks-3">Apa</p>
@@ -105,56 +108,56 @@
         
         <div class="w-full relative flex flex-row flex-wrap gap-10 justify-center items-center pb-10 font-Knewave">
             <div class="w-auto h-auto relative flex flex-col justify-center items-center gap-3">
-                <img src="img/bisnis.png" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
+                <img src="img/bisnis.webp" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
                 <div class="w-[325px] h-[75px] relative flex items-center justify-center bg-linear-[140deg,#FFDA24_39%,#917C14_100%] rounded-[20px] shadow-lg/75 kotak-label-1">
                     <p class="text-[35px] teks-label-1">Bisnis</p>
                 </div>
             </div>
 
             <div class="w-auto h-auto relative flex flex-col justify-center items-center gap-3">
-                <img src="img/akuntansi.png" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
+                <img src="img/akuntansi.webp" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
                 <div class="w-[325px] h-[75px] relative flex items-center justify-center bg-linear-[140deg,#FFDA24_39%,#917C14_100%] rounded-[20px] shadow-lg/75 kotak-label-1">
                     <p class="text-[35px] teks-label-1">Akuntansi</p>
                 </div>
             </div>
 
             <div class="w-auto h-fit relative flex flex-col justify-center items-center gap-3">
-                <img src="img/pemasaran-digital.png" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
+                <img src="img/pemasaran-digital.webp" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
                 <div class="w-[325px] h-[75px] relative flex items-center justify-center bg-linear-[140deg,#FFDA24_39%,#917C14_100%] rounded-[20px] shadow-lg/75 kotak-label-1">
                     <p class="text-[25px] text-center text-center teks-label-1">Pemasaran <br> Digital</p>
                 </div>
             </div>
 
             <div class="w-auto h-auto relative flex flex-col justify-center items-center gap-3">
-                <img src="img/ekonomi-kreatif.png" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
+                <img src="img/ekonomi-kreatif.webp" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
                 <div class="w-[325px] h-[75px] relative flex items-center justify-center bg-linear-[140deg,#FFDA24_39%,#917C14_100%] rounded-[20px] shadow-lg/75 kotak-label-1">
                     <p class="text-[25px] text-center teks-label-1">Ekonomi <br> Kreatif</p>
                 </div>
             </div>
 
             <div class="w-auto h-auto relative flex flex-col justify-center items-center gap-3">
-                <img src="img/manajemen-keuangan.png" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
+                <img src="img/manajemen-keuangan.webp" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
                 <div class="w-[325px] h-[75px] relative flex items-center justify-center bg-linear-[140deg,#FFDA24_39%,#917C14_100%] rounded-[20px] shadow-lg/75 kotak-label-1">
                     <p class="text-[25px] text-center teks-label-1">Manajemen <br> Keuangan</p>
                 </div>
             </div>
 
             <div class="w-auto h-auto relative flex flex-col justify-center items-center gap-3">
-                <img src="img/manajemen-pemasaran.png" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
+                <img src="img/manajemen-pemasaran.webp" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
                 <div class="w-[325px] h-[75px] relative flex items-center justify-center bg-linear-[140deg,#FFDA24_39%,#917C14_100%] rounded-[20px] shadow-lg/75 kotak-label-1">
                     <p class="text-[25px] text-center teks-label-1">Manajemen <br> Pemasaran</p>
                 </div>
             </div>
 
             <div class="w-auto h-auto relative flex flex-col justify-center items-center gap-3">
-                <img src="img/komunikasi-kreatif.png" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
+                <img src="img/komunikasi-kreatif.webp" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
                 <div class="w-[325px] h-[75px] relative flex items-center justify-center bg-linear-[140deg,#FFDA24_39%,#917C14_100%] rounded-[20px] shadow-lg/75 kotak-label-1">
                     <p class="text-[25px] text-center teks-label-1">Komunikasi <br> Kreatif</p>
                 </div>
             </div>
 
             <div class="w-auto h-auto relative flex flex-col justify-center items-center gap-3">
-                <img src="img/manajemen-sdm.png" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
+                <img src="img/manajemen-sdm.webp" alt="" class="w-[150px] h-[150px] bg-contain logo-1">
                 <div class="w-[325px] h-[75px] relative flex items-center justify-center bg-linear-[140deg,#FFDA24_39%,#917C14_100%] rounded-[20px] shadow-lg/75 kotak-label-1">
                     <p class="text-[25px] text-center teks-label-1">Manajemen <br> SDM</p>
                 </div>
@@ -175,11 +178,11 @@
 
         <div class="w-[85%] h-170 relative flex flex-col border-2 box-5">
             <div class="relative w-full h-[35%] flex flex-row">
-                <img src="img/creative-entrepenur.jpg" alt="" class="w-[20%] h-full bg-contain box-7">
-                <img src="img/content-creator.jpg" alt="" class="w-[20%] h-full bg-contain box-7">
-                <img src="img/business-consultant.jpg" alt="" class="w-[20%] h-full bg-contain box-7">
-                <img src="img/business-strategist.jpg" alt="" class="w-[20%] h-full bg-contain box-7">
-                <img src="img/business-planner.jpg" alt="" class="w-[20%] h-full bg-contain box-7">
+                <img src="img/creative-entrepenur.webp" alt="" class="w-[20%] h-full bg-contain box-7">
+                <img src="img/content-creator.webp" alt="" class="w-[20%] h-full bg-contain box-7">
+                <img src="img/business-consultant.webp" alt="" class="w-[20%] h-full bg-contain box-7">
+                <img src="img/business-strategist.webp" alt="" class="w-[20%] h-full bg-contain box-7">
+                <img src="img/business-planner.webp" alt="" class="w-[20%] h-full bg-contain box-7">
             </div>
             <div class="relative w-full h-[65%] flex flex-row" dir="ltr">
                 <div class="w-[20%] h-full bg-[#FFDA24] border-t-2 border-b-2 box-6">
@@ -226,29 +229,29 @@
         <div class="absolute w-full h-full -z-1 bottom-[1px] box-8">
             <div class=" w-full h-auto -z-1">
                 <video muted autoplay loop class="w-[200px] h-[400px] object-cover rounded-[10px] absolute top-[7%] left-[10%] rotate-10 video-1" id="vid-1">
-                    <source src="img/Project-Biskref-1.mp4" type="video/mp4">
+                    <source src="vid/Project-Biskref-1.mp4" type="video/mp4">
                 </video>
                 <video muted autoplay loop class="w-[200px] h-[400px] object-cover rounded-[10px] absolute bottom-[4%] left-[5%] -rotate-10 video-1" id="vid-2">
-                    <source src="img/Project-Biskref-2.mp4" type="video/mp4">
+                    <source src="vid/Project-Biskref-2.mp4" type="video/mp4">
                 </video>
                 <video muted autoplay loop class="w-[200px] h-[400px] object-cover rounded-[10px] absolute top-[7%] right-[10%] -rotate-10 video-1" id="vid-3">
-                    <source src="img/Project-Biskref-3.mp4" type="video/mp4">
+                    <source src="vid/Project-Biskref-3.mp4" type="video/mp4">
                 </video>
                 <video muted autoplay loop class="w-[200px] h-[400px] object-cover rounded-[10px] absolute bottom-[4%] right-[5%] rotate-10 video-1" id="vid-4">
-                    <source src="img/Project-Biskref-4.mp4" type="video/mp4">
+                    <source src="vid/Project-Biskref-4.mp4" type="video/mp4">
                 </video>
                 <video muted autoplay loop class="w-[400px] h-[200px] object-cover rounded-[10px] absolute top-[0.01px] left-[36.5%] video-1" id="vid-5">
-                    <source src="img/Project-Biskref-5.mp4" type="video/mp4">
+                    <source src="vid/Project-Biskref-5.mp4" type="video/mp4">
                 </video>
                 <video muted autoplay loop class="w-[400px] h-[200px] object-cover rounded-[10px] absolute bottom-[0.01px] left-[36.5%] video-1" id="vid-6">
-                    <source src="img/Project-Biskref-6.mp4" type="video/mp4">
+                    <source src="vid/Project-Biskref-6.mp4" type="video/mp4">
                 </video>
 
                 <div class="w-full h-full absolute flex justify-center items-center">
-                    <img src="img/bisnis.png" alt="" class="absolute bg-contain w-[120px] h-[120px] top-[30%] left-[30%] -rotate-10 gambar-11">
-                    <img src="img/Chart.png" alt="" class="absolute bg-contain w-[120px] h-[120px] top-[30%] right-[30%] rotate-10 gambar-12">
-                    <img src="img/Hp.png" alt="" class="absolute bg-contain w-[150px] h-[150px] top-[55%] left-[25%] rotate-10 gambar-13">
-                    <img src="img/Garis.png" alt="" class="absolute bg-contain w-[120px] h-[120px] top-[55%] right-[27%] gambar-14">
+                    <img src="img/bisnis.webp" alt="" class="absolute bg-contain w-[120px] h-[120px] top-[30%] left-[30%] -rotate-10 gambar-11">
+                    <img src="img/Chart.webp" alt="" class="absolute bg-contain w-[120px] h-[120px] top-[30%] right-[30%] rotate-10 gambar-12">
+                    <img src="img/Hp.webp" alt="" class="absolute bg-contain w-[150px] h-[150px] top-[55%] left-[25%] rotate-10 gambar-13">
+                    <img src="img/Garis.webp" alt="" class="absolute bg-contain w-[120px] h-[120px] top-[55%] right-[27%] gambar-14">
                 </div>
             </div>
         </div>
@@ -268,7 +271,7 @@
         </div>
 
         <div class="bg-[#F0F0F0] w-[300px] h-[300px] rounded-[50%] relative flex items-center justify-center shadow-lg/20">
-            <img src="img/POLTEQ-BG.png" alt="" class="w-[225px] h-[175px] bg-contain">
+            <img src="img/POLTEQ-BG.webp" alt="" class="w-[225px] h-[175px] bg-contain">
         </div>
 
         <button class="mt-15 bg-[#001ba3] text-white font-Knewave p-3.5 text-[25px] rounded-[15px] hover:cursor-pointer text-stroke-15"> Daftar Sekarang</button>
@@ -280,19 +283,19 @@
                 <p class="text-[25px] font-DSansBold">Hubungi Kami</p>
                 <div class="relative flex flex-col gap-3">
                     <div class="relative flex flex-row gap-3" onclick="goPolteq()">
-                        <img src="img/Website.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/Website.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="https://polteq.ac.id" class="">polteq.ac.id</a>
                     </div>
                     <div class="relative flex flex-row gap-3">
-                        <img src="img/kontak.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/kontak.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="" class="">+62-851-6757-5775</a>
                     </div>
                     <div class="relative flex flex-row gap-3 items-center" onclick="goPolteqLoc()">
-                        <img src="img/location.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/location.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="https://maps.app.goo.gl/vkoQz7V5Ne7s6CF86" class="">Jl. Fatimah <br>No.1-2, Pontianak</a>
                     </div>
                     <div class="relative flex flex-row gap-3 items-center">
-                        <img src="img/email.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/email.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="" class="">pmb@polteq.ac.id</a>
                     </div>
                 </div>
@@ -302,15 +305,15 @@
                 <p class="text-[25px] font-DSansBold">Media Sosial</p>
                 <div class="relative flex flex-col gap-3">
                     <div class="relative flex flex-row gap-3">
-                        <img src="img/instagram.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/instagram.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">@politeknik_tonggak_equator</a>
                     </div>
                     <div class="relative flex flex-row gap-3">
-                        <img src="img/tiktok.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/tiktok.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">@polteq</a>
                     </div>
                     <div class="relative flex flex-row gap-3">
-                        <img src="img/youtube.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/youtube.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="https://www.youtube.com/@polteqpontianak" class="">Politeknik Tonggak Equator</a>
                     </div>
                 </div>
@@ -345,7 +348,6 @@
     <!--Gsap-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/GSDevTools.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/CustomEase.min.js"></script>
 

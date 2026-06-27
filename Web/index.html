@@ -7,11 +7,14 @@
     <title>Polteq</title>
     <link rel="stylesheet" href="src/output.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./img/POLTEQ-BG.webp">
 <body class="overflow-x-hidden">
     <header class="sticky top-0 bg-white shadow-lg pb-[10px] box-1 z-1000">
         <div class="flex flex-row justify-between mt-3">
             <div class="relative flex flex-row cursor-pointer" onclick="goPolteq()">
-                <img src="img/logo polteq.jpg" alt="" class="w-[100px] h-[75px] bg-cover relative left-5">
+                <img src="img/logo polteq.webp" alt="" class="w-[100px] h-[75px] bg-cover relative left-5">
                 <div class="relative flex flex-col justify-center">
                     <h1 class="font-DSansBold ml-10 text-[25px]">Politeknik Tonggak Equator</h1>
                     <p class="font-DSans ml-10 text-[18px]">POLTEQ Means Quality</p>
@@ -22,14 +25,14 @@
                     <div class="">
                         <a class="font-DSansBold text-[18px] hover:underline cursor-pointer" href="./index.html">Home</a>
                     </div>
-                    <div class="relative flex flex-col" x-data="dropdown('tentang')">
+                    <div class="relative flex flex-col" x-data="dropdown('tentang')" x-cloak>
                         <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Tentang</p>
                         <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-27 flex flex-col text-white p-2 font-DSansBold text-[15px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
                             <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=struktur&&action=index">Struktur Organisasi</a>
-                            <a class="hover:bg-red-500 cursor-pointer" href="#box-17">Visi Misi</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="./index.html#box-17">Visi Misi</a>
                         </div>
                     </div>
-                    <div class="relative flex flex-col" x-data="dropdown('prodi')">
+                    <div class="relative flex flex-col" x-data="dropdown('prodi')" x-cloak>
                         <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Program Studi</p>
                         <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-67 flex flex-col text-white p-2 font-DSansBold text-[14px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
                             <p class="hover:bg-red-500 cursor-pointer" onclick="goEbpc()">English for Bussiness and Proffesional Communication</p>
@@ -38,7 +41,7 @@
                             <p class="hover:bg-red-500 cursor-pointer" onclick="">Teknologi Produksi Tanaman Perkebunan</p>
                         </div>
                     </div>
-                    <div class="relative flex flex-col" x-data="dropdown('informasi')">
+                    <div class="relative flex flex-col" x-data="dropdown('informasi')" x-cloak>
                         <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Informasi</p>
                         <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-30 flex flex-col text-white p-2 font-DSansBold text-[14px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
                             <a class="hover:bg-red-500 cursor-pointer">Berita</a>
@@ -53,7 +56,7 @@
 
     <main>
         <section class="relative flex flex-row justify-center items-center -z-1">
-            <div class="bg-[url(./../img/Gedung-1.jpg)] w-[100%] h-[635px] bg-cover bg-center bg-no-repeat rounded-[10px] absolute top-[0.1px] absolute -z-1 box-2"></div>
+            <div class="bg-[url(./../img/Gedung-1.webp)] w-[100%] h-[635px] bg-cover bg-center bg-no-repeat rounded-[10px] absolute top-[0.1px] absolute -z-1 box-2"></div>
             <div class="bg-linear-[10deg,rgba(0,0,0,1)_2%,rgba(0,0,0,0)_98%] absolute z-2 w-[100%] h-[635px] top-[0.1px] box-3">
                 <div class="absolute bottom-15 ml-10 z-2">
                     <div class="relative top-5"><p class="font-DSansBold text-white text-[50px]">Selamat datang di <span class="text-red-700 text-[70px]">POLTEQ</span></p></div>
@@ -73,7 +76,7 @@
                     <p>Didirikan sejak 2002, Politeknik Tonggak Equator atau yang familiar juga dikenal dengan POLTEQ merupakan Lembaga Pendidikan Vokasi dan Lembaga Pendidikan Profesional yang bersifat universal dengan memberikan pengalaman belajar dan latihan menuju pembentukan kemampuan profesional dalam Ilmu Pengetahuan dan Aplikasi.</p>
                 </div>
                 <div class="bg-white w-[300px] h-[300px] relative flex flex-row justify-center items-center rounded-[50%] drop-shadow-xl/25 box-6">
-                    <img src="img/POLTEQ-BG.png" alt="" class="w-[250px] h-[200px] bg-cover">
+                    <img src="img/POLTEQ-BG.webp" alt="" class="w-[250px] h-[200px] bg-cover">
                 </div>
             </div>
         </section>
@@ -113,8 +116,8 @@
 
             <div class="w-full flex flex-col justify-center items-center gap-110 mt-15">
                 <div class="w-[45%] relative cursor-pointer" onclick="goPolteqLoc()">
-                    <img src="./img/polteq-location.png" alt="" class="absolute z-1 w-[120px] object-contain top-[-45px] left-36" id="img-3">
-                    <img src="./img/Screenshot 2026-06-01 141634.png" alt="" class="absolute object-cover w-full" id="img-4">
+                    <img src="./img/polteq-location.webp" alt="" class="absolute z-1 w-[120px] object-contain top-[-45px] left-36" id="img-3">
+                    <img src="./img/Screenshot 2026-06-01 141634.webp" alt="" class="absolute object-cover w-full" id="img-4">
                 </div>
 
                 <p class="w-[45%] font-DSans text-[20px] cursor-pointer" onclick="goPolteqLoc()">Jl. Fatimah No.1-2, Tengah, Kec. Pontianak Kota, Kota Pontianak, Kalimantan Barat 78243</p>
@@ -126,19 +129,19 @@
 
             <div class="relative w-full flex flex-row justify-center items-center gap-20 mt-20">
                 <div class=" w-[300px] h-[300px] rounded-[50%] bg-[linear-gradient(200deg,#FFD834_15%,#F6CF31_61%,#D4B32A_90%)] shadow-xl/15 relative flex flex-col justify-center items-center cursor-pointer box-7" onclick="goBiskref()">
-                    <img src="img/BK-1.png" alt="" class="w-[200px] h-[200px]">
+                    <img src="img/BK-1.webp" alt="" class="w-[200px] h-[200px]">
                     <h1 class="font-DSansBold text-[17px] relative bottom-5">Bisnis Kreatif</h1>
                 </div>
                 <div class="w-[300px] h-[300px] rounded-[50%] bg-[linear-gradient(200deg,#00BF63_15%,#00B75E_61%,#00954D_90%)] shadow-xl/15 relative flex flex-col justify-center items-center cursor-pointer box-8">
-                    <img src="img/TPTP-1.png" alt="" class="w-[200px] h-[200px]">
+                    <img src="img/TPTP-1.webp" alt="" class="w-[200px] h-[200px]">
                     <h1 class="font-DSansBold text-[17px] relative bottom-5 text-center">Teknologi Produksi <br> Tanaman Perkebunan</h1>
                 </div>
                 <div class="w-[300px] h-[300px] rounded-[50%] bg-[linear-gradient(200deg,#B00403_15%,#A70303_61%,#850303_90%)] shadow-xl/15 relative flex flex-col justify-center items-center cursor-pointer box-9" onclick="goEbpc()">
-                    <img src="img/EBPC-1.png" alt="" class="w-[175px] h-[175px]">
+                    <img src="img/EBPC-1.webp" alt="" class="w-[175px] h-[175px]">
                     <h1 class="font-DSansBold text-[14px] relative top-2 text-center">English for Business and <br> Professional Communication</h1>
                 </div>
                 <div class="w-[300px] h-[300px] rounded-[50%] bg-[linear-gradient(200deg,#3825FD_15%,#3625F4_61%,#2E1FD2_90%)] shadow-xl/15 relative flex flex-col justify-center items-center cursor-pointer box-10" onclick="goTp()">
-                    <img src="img/TP-1.png" alt="" class="w-[200px] h-[200px]">
+                    <img src="img/TP-1.webp" alt="" class="w-[200px] h-[200px]">
                     <h1 class="font-DSansBold text-[17px] relative top-2 text-center">Teknologi Pangan</h1>
                 </div>
             </div>
@@ -152,39 +155,39 @@
             <div class="w-full swiper mt-10 box-12" id="swiper-2">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><div class="w-full flex flex-row items-center justify-center">
-                        <img src="./img/basket-logo.png" alt="" class="object-contain w-[30%] opacity-[0.5]" id="img-1">
+                        <img src="./img/basket-logo.webp" alt="" class="object-contain w-[30%] opacity-[0.5]" id="img-1">
                         <img src="./img/basket.webp" alt="" class="object-contain w-[30%]" id="img">
-                        <img src="./img/basket-logo.png" alt="" class="object-contain w-[30%] opacity-[0.5] scale-x-[-1]" id="img-2">
+                        <img src="./img/basket-logo.webp" alt="" class="object-contain w-[30%] opacity-[0.5] scale-x-[-1]" id="img-2">
                     </div></div>
                     <div class="swiper-slide"><div class="w-full flex flex-row items-center justify-center gap-15">
-                        <img src="./img/voli.png" alt="" class="object-contain w-[30%] opacity-[0.5]">
-                        <img src="./img/voli.webp" alt="" class="object-contain w-[30%]">
-                        <img src="./img/voli.png" alt="" class="object-contain w-[30%] opacity-[0.5] scale-x-[-1]">
+                        <img src="./img/voli.webp" alt="" class="object-contain w-[30%] opacity-[0.5]">
+                        <img src="./img/voli-image.webp" alt="" class="object-contain w-[30%]">
+                        <img src="./img/voli.webp" alt="" class="object-contain w-[30%] opacity-[0.5] scale-x-[-1]">
                     </div></div>
                     <div class="swiper-slide"><div class="w-full flex flex-row items-center justify-center gap-15">
-                        <img src="./img/futsal-logo.png" alt="" class="object-contain w-[15%] opacity-[0.5]">
+                        <img src="./img/futsal-logo.webp" alt="" class="object-contain w-[15%] opacity-[0.5]">
                         <img src="./img/futsal.webp" alt="" class="object-contain w-[30%]">
-                        <img src="./img/futsal-logo.png" alt="" class="object-contain w-[15%] opacity-[0.5] scale-x-[-1]">
+                        <img src="./img/futsal-logo.webp" alt="" class="object-contain w-[15%] opacity-[0.5] scale-x-[-1]">
                     </div></div>
                     <div class="swiper-slide"><div class="w-full flex flex-row items-center justify-center gap-15">
-                        <img src="./img/badminton-logo.png" alt="" class="object-contain w-[20%] opacity-[0.5]">
+                        <img src="./img/badminton-logo.webp" alt="" class="object-contain w-[20%] opacity-[0.5]">
                         <img src="./img/badminton.webp" alt="" class="object-contain w-[30%]">
-                        <img src="./img/badminton-logo.png" alt="" class="object-contain w-[20%] opacity-[0.5] scale-x-[-1]">
+                        <img src="./img/badminton-logo.webp" alt="" class="object-contain w-[20%] opacity-[0.5] scale-x-[-1]">
                     </div></div>
                     <div class="swiper-slide"><div class="w-full flex flex-row items-center justify-center gap-25">
-                        <img src="./img/gamer-logo.png" alt="" class="object-contain w-[15%] opacity-[0.5]">
+                        <img src="./img/gamer-logo.webp" alt="" class="object-contain w-[15%] opacity-[0.5]">
                         <img src="./img/e-sport.webp" alt="" class="object-contain w-[30%]">
-                        <img src="./img/gamer-logo.png" alt="" class="object-contain w-[15%] opacity-[0.5] scale-x-[-1]">
+                        <img src="./img/gamer-logo.webp" alt="" class="object-contain w-[15%] opacity-[0.5] scale-x-[-1]">
                     </div></div>
                     <div class="swiper-slide"><div class="w-full flex flex-row items-center justify-center gap-25">
-                        <img src="./img/modern-dance-logo-removebg-preview.png" alt="" class="object-contain w-[25%] opacity-[0.5]">
+                        <img src="./img/modern-dance-logo-removebg-preview.webp" alt="" class="object-contain w-[25%] opacity-[0.5]">
                         <img src="./img/modern-dance.webp" alt="" class="object-contain w-[30%]">
-                        <img src="./img/modern-dance-logo-removebg-preview.png" alt="" class="object-contain w-[25%] opacity-[0.5] scale-x-[-1]">
+                        <img src="./img/modern-dance-logo-removebg-preview.webp" alt="" class="object-contain w-[25%] opacity-[0.5] scale-x-[-1]">
                     </div></div>
                     <div class="swiper-slide"><div class="w-full flex flex-row items-center justify-center gap-15">
-                        <img src="./img/tari-tradisional-logo.png" alt="" class="object-contain w-[30%] opacity-[0.5]">
+                        <img src="./img/tari-tradisional-logo.webp" alt="" class="object-contain w-[30%] opacity-[0.5]">
                         <img src="./img/tari-tradisional.webp" alt="" class="object-contain w-[30%]">
-                        <img src="./img/tari-tradisional-logo.png" alt="" class="object-contain w-[30%] opacity-[0.5] scale-x-[-1]">
+                        <img src="./img/tari-tradisional-logo.webp" alt="" class="object-contain w-[30%] opacity-[0.5] scale-x-[-1]">
                     </div></div>
                 </div>
             </div>
@@ -197,13 +200,13 @@
 
                 <video src="./vid/YTDown_Shorts_Testimoni-POLTEQ-Reyven-Ryansen-EBPC-4B_Media_nbOb6alP56k_001_720p.mp4" autoplay muted loop  class="h-[600px] w-[400px] object-cover rounded-lg" id="box-all-1"></video>
 
-                <img src="./img/testimoni-1.png" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] -top-10 left-15" id="box-all-1">
-                <img src="./img/testimoni-2.png" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] scale-150 blur-[1px] -bottom-10 right-50 z-3" id="box-all-1">
-                <img src="./img/testimoni-3.png" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] -z-1 bottom-10 left-75 scale-75" id="box-all-1">
-                <img src="./img/testimoni-5.png" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] bottom-0 -left-25 scale-200 blur-[1px]" id="box-all-1">
-                <img src="./img/testimoni-6.png" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] -top-10 scale-125 blur-[0.5px] right-45" id="box-all-1">
-                <img src="./img/testimoni-7.png" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] -top-25 scale-75 left-100 -z-1" id="box-all-1">
-                <img src="./img/testimoni-8.png" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] top-45 scale-90 right-15 z-2" id="box-all-1">
+                <img src="./img/testimoni-1.webp" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] -top-10 left-15" id="box-all-1">
+                <img src="./img/testimoni-2.webp" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] scale-150 blur-[1px] -bottom-10 right-50 z-3" id="box-all-1">
+                <img src="./img/testimoni-3.webp" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] -z-1 bottom-10 left-75 scale-75" id="box-all-1">
+                <img src="./img/testimoni-5.webp" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] bottom-0 -left-25 scale-200 blur-[1px]" id="box-all-1">
+                <img src="./img/testimoni-6.webp" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] -top-10 scale-125 blur-[0.5px] right-45" id="box-all-1">
+                <img src="./img/testimoni-7.webp" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] -top-25 scale-75 left-100 -z-1" id="box-all-1">
+                <img src="./img/testimoni-8.webp" alt="" class="absolute w-[325px] shadow-lg/25 rounded-[20px] top-45 scale-90 right-15 z-2" id="box-all-1">
             </div>
         </section>
 
@@ -213,13 +216,13 @@
 
                 <div class="relative w-full h-[150px] swiper swiper1 swiper-ease-linear">
                     <div class="w-auto h-auto relative flex flex-row swiper-wrapper">
-                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/BCA.png" alt="" class="w-[300px] h-full bg-contain bg-center"></div></div>
-                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Mandiri.png" alt="" class="w-[300px] h-full bg-contain bg-center"></div></div>
-                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Maybank.png" alt="" class="w-[200px] h-full bg-contain bg-center"></div></div>
-                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Paninbank.png" alt="" class="w-[300px] h-full bg-contain bg-center"></div></div>
-                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Ibis.png" alt="" class="w-[150px] h-full bg-contain bg-center"></div></div>
-                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Swissberlin.png" alt="" class="w-[400px] h-full bg-contain bg-center"></div></div>
-                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Artaboga.png" alt="" class="w-[300px] h-full bg-contain bg-center"></div></div>
+                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/BCA.webp" alt="" class="w-[300px] h-full bg-contain bg-center"></div></div>
+                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Mandiri.webp" alt="" class="w-[300px] h-full bg-contain bg-center"></div></div>
+                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Maybank.webp" alt="" class="w-[200px] h-full bg-contain bg-center"></div></div>
+                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Paninbank.webp" alt="" class="w-[300px] h-full bg-contain bg-center"></div></div>
+                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Ibis.webp" alt="" class="w-[150px] h-full bg-contain bg-center"></div></div>
+                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Swissberlin.webp" alt="" class="w-[400px] h-full bg-contain bg-center"></div></div>
+                        <div class="swiper-slide"><div class="w-full h-full relative flex flex-row justify-center items-center"><img src="img/Artaboga.webp" alt="" class="w-[300px] h-full bg-contain bg-center"></div></div>
                     </div>
                 </div>
             </div>
@@ -229,7 +232,7 @@
             <div class="w-full h-full mt-40 relative flex justify-center items-center flex-col gap-15">
                 <div class="w-full h-full relative flex justify-center items-center ">
                     <div class="bg-white w-[300px] h-[300px] relative flex flex-row justify-center items-center rounded-[50%] drop-shadow-xl/25 box-13">
-                        <img src="img/POLTEQ-BG.png" alt="" class="w-[250px] h-[200px] bg-cover">
+                        <img src="img/POLTEQ-BG.webp" alt="" class="w-[250px] h-[200px] bg-cover">
                     </div>
                 </div>
 
@@ -252,19 +255,19 @@
                 <p class="text-[25px] font-DSansBold">Hubungi Kami</p>
                 <div class="relative flex flex-col gap-3">
                     <div class="relative flex flex-row gap-3" onclick="goPolteq()">
-                        <img src="img/Website.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/Website.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="https://polteq.ac.id" class="">polteq.ac.id</a>
                     </div>
                     <div class="relative flex flex-row gap-3">
-                        <img src="img/kontak.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/kontak.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="" class="">+62-851-6757-5775</a>
                     </div>
                     <div class="relative flex flex-row gap-3 items-center" onclick="goPolteqLoc()">
-                        <img src="img/location.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/location.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="https://maps.app.goo.gl/vkoQz7V5Ne7s6CF86" class="">Jl. Fatimah <br>No.1-2, Pontianak</a>
                     </div>
                     <div class="relative flex flex-row gap-3 items-center">
-                        <img src="img/email.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/email.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="" class="">pmb@polteq.ac.id</a>
                     </div>
                 </div>
@@ -274,15 +277,15 @@
                 <p class="text-[25px] font-DSansBold">Media Sosial</p>
                 <div class="relative flex flex-col gap-3">
                     <div class="relative flex flex-row gap-3">
-                        <img src="img/instagram.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/instagram.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">@politeknik_tonggak_equator</a>
                     </div>
                     <div class="relative flex flex-row gap-3">
-                        <img src="img/tiktok.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/tiktok.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">@polteq</a>
                     </div>
                     <div class="relative flex flex-row gap-3">
-                        <img src="img/youtube.png" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <img src="img/youtube.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
                         <a href="https://www.youtube.com/@polteqpontianak" class="">Politeknik Tonggak Equator</a>
                     </div>
                 </div>
@@ -316,7 +319,6 @@
     <!--Gsap-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/GSDevTools.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/Flip.min.js"></script>
 

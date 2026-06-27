@@ -1049,9 +1049,6 @@
   .bg-\[\#001ba3\] {
     background-color: #001ba3;
   }
-  .bg-\[\#94bbff\] {
-    background-color: #94bbff;
-  }
   .bg-\[\#639aff\] {
     background-color: #639aff;
   }
@@ -1060,9 +1057,6 @@
   }
   .bg-\[\#FFDA24\] {
     background-color: #FFDA24;
-  }
-  .bg-\[\#a3c2f7\] {
-    background-color: #a3c2f7;
   }
   .bg-\[\#bbd2fa\] {
     background-color: #bbd2fa;
@@ -1099,8 +1093,14 @@
   .bg-\[url\(\.\/\.\.\/img\/Gedung-1\.jpg\)\] {
     background-image: url(./../img/Gedung-1.jpg);
   }
+  .bg-\[url\(\.\/\.\.\/img\/Gedung-1\.webp\)\] {
+    background-image: url(./../img/Gedung-1.webp);
+  }
   .bg-\[url\(\.\/\.\.\/img\/kelas-polteq\.jpg\)\] {
     background-image: url(./../img/kelas-polteq.jpg);
+  }
+  .bg-\[url\(\.\/\.\.\/img\/kelas-polteq\.webp\)\] {
+    background-image: url(./../img/kelas-polteq.webp);
   }
   .bg-contain {
     background-size: contain;
@@ -1582,6 +1582,9 @@
   .text-stroke-16 {
     -webkit-text-stroke: 3px #000000;
   }
+}
+[x-cloak] {
+  display: none !important;
 }
 @property --tw-scale-x {
   syntax: "*";
