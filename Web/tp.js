@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 // Function
 function goBiskref() {
-    window.location.pathname = './Web/biskref.html'
+    window.location.pathname = './biskref.html'
 }
 
 function goPolteq (){
@@ -11,11 +11,11 @@ function goPolteq (){
 }
 
 function goEbpc () {
-    window.location.pathname ='./Web/ebpc.html'
+    window.location.pathname ='./ebpc.html'
 }
 
 function goTp () {
-    window.location.pathname ='./Web/tp.html'
+    window.location.pathname ='./tp.html'
 }
 
 function goPolteqLoc () {

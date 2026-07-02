@@ -12,6 +12,22 @@ function goGit () {
     window.location.href = 'https://github.com/Ken-Jet';
 }
 
+function goBiskref() {
+    window.location.pathname = './biskref.html'
+}
+
+function goEbpc () {
+    window.location.pathname ='./ebpc.html'
+}
+
+function goTp () {
+    window.location.pathname ='./tp.html'
+}
+
+function goPolteqLoc () {
+    window.location.href = 'https://maps.app.goo.gl/vkoQz7V5Ne7s6CF86'
+}
+
 // function goEmail () {
 //     window.location.href = 'mailto:a2441057@polteq.ac.id';
 // }
