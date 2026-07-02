@@ -4,7 +4,7 @@ gsap.registerPlugin(CustomEase);
 
 // Function
 function goBiskref() {
-    window.location.href = './biskref.html'
+    window.location.href = './Web/biskref.html'
 }
 
 function goPolteq (){
@@ -12,11 +12,15 @@ function goPolteq (){
 }
 
 function goEbpc () {
-    window.location.href ='./ebpc.html'
+    window.location.href ='./Web/ebpc.html'
 }
 
 function goTp () {
-    window.location.href ='./tp.html'
+    window.location.href ='./Web/tp.html'
+}
+
+function goPolteqLoc () {
+    window.location.href = 'https://maps.app.goo.gl/vkoQz7V5Ne7s6CF86'
 }
 
 function goPolteqLoc () {

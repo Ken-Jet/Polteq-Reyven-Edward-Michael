@@ -13,15 +13,15 @@ function goGit () {
 }
 
 function goBiskref() {
-    window.location.href = './biskref.html'
+    window.location.href = './Web/biskref.html'
 }
 
 function goEbpc () {
-    window.location.href ='./ebpc.html'
+    window.location.href ='./Web/ebpc.html'
 }
 
 function goTp () {
-    window.location.href ='./tp.html'
+    window.location.href ='./Web/tp.html'
 }
 
 function goPolteqLoc () {
