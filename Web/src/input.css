@@ -37,6 +37,15 @@
   src: url('../font/Cocogoose-Pro-Light-Italic-trial.ttf');
 }
 
+@font-face{
+    font-family : 'TommyExBold';
+    src : url('./../font/MADE-TOMMY-ExtraBold_PERSONAL\ USE.otf')
+}
+@font-face{
+    font-family : 'TommyLight';
+    src : url('./../font/MADE\ TOMMY\ Light_PERSONAL\ USE.otf')
+}
+
 @theme {
     --font-DSans: "Droid-Sans" , sans-serif;
     --font-DSansBold : 'Droid-Sans-Bold','Noto Color Emoji', sans-serif;
@@ -45,6 +54,8 @@
     --font-CocoDark: 'CocoDark', sans-serif;
     --font-CocoLight: 'CocoLight', sans-serif;
     --font-CocoLightItali: 'CocoLightItali', sans-serif;
+    --font-TommyExBold : 'TommyExBold', sans-serif;
+    --font-TommyLight : 'TommyLight', sans-serif;
 }
 
 @layer components{

@@ -3,9 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Berita</title>
+    <link rel="stylesheet" href="src/output.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./img/POLTEQ-BG.webp">
 </head>
 <body>
-    
+    <header class="sticky top-0 bg-white shadow-lg pb-[10px] box-1 z-1000">
+        <div class="flex flex-row justify-between pt-2">
+            <div class="relative flex flex-row cursor-pointer" onclick="goPolteq()">
+                <img src="img/logo polteq.webp" alt="" class="w-[100px] h-[75px] bg-cover relative left-5">
+                <div class="relative flex flex-col justify-center">
+                    <h1 class="font-DSansBold ml-10 text-[25px]">Politeknik Tonggak Equator</h1>
+                    <p class="font-DSans ml-10 text-[18px]">POLTEQ Means Quality</p>
+                </div>
+            </div>
+            <div class="mr-20 relative flex flex row items-center justify-center gap-15" x-data="mode()">
+                <div class="flex flex-row items-center justify-center gap-15">
+                    <div class="">
+                        <a class="font-DSansBold text-[18px] hover:underline cursor-pointer" href="./index.html">Home</a>
+                    </div>
+                    <div class="relative flex flex-col" x-data="dropdown('tentang')" x-cloak>
+                        <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Tentang</p>
+                        <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-27 flex flex-col text-white p-2 font-DSansBold text-[15px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
+                            <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=struktur&&action=index">Struktur Organisasi</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="./index.html#box-17">Visi Misi</a>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col" x-data="dropdown('prodi')" x-cloak>
+                        <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Program Studi</p>
+                        <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-67 flex flex-col text-white p-2 font-DSansBold text-[14px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="goEbpc()">English for Bussiness and Proffesional Communication</p>
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="goBiskref()">Bisnis Kreatif</p>
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="goTp()">Teknologi Pangan</p>
+                            <p class="hover:bg-red-500 cursor-pointer" onclick="">Teknologi Produksi Tanaman Perkebunan</p>
+                        </div>
+                    </div>
+                    <div class="relative flex flex-col" x-data="dropdown('informasi')" x-cloak>
+                        <p class="font-DSansBold text-[18px] hover:underline cursor-pointer" @mouseenter="openToogle()" @mouseleave="closeToogle()">Informasi</p>
+                        <div class="absolute bg-[#001ba3] w-[150px] h-fit -bottom-30 flex flex-col text-white p-2 font-DSansBold text-[14px] gap-5" x-ref="menu" @mouseenter="openToogle()" @mouseleave="closeToogle()">
+                            <a class="hover:bg-red-500 cursor-pointer" href="./berita.html">Berita</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=fasilitas">Fasilitas</a>
+                            <a class="hover:bg-red-500 cursor-pointer" href="https://www.polteq.ac.id/index.php?page=pmb">PMB dan Beasiswa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-[url(./../img/Gedung-1.webp)] w-screen h-screen bg-cover opacity-[0.2] bg-fixed fixed inset -z-10 grayscale"></div>
+
+    <h1 class="text-center font-DSansBold text-red-700 text-[55px] pt-10">Berita dan Artikel</h1>
+
+    <div class="w-full flex flex-row flex-wrap mt-20 pl-10 pr-10 gap-10 justify-between">
+        <div class="w-100 h-120 rounded-[20px] overflow-hidden flex flex-col cursor-pointer shadow-lg/30" onclick="window.location.href = 'article.html'">
+            <img src="img/side-view-woman-gathering-greenhouse-strawberry-crop-with-her-coworker-background.webp" alt="" class="w-full h-[75%] object-cover object-center">
+            <div class="w-full h-full bg-[#001ba3] text-white font-DSansBold pl-5 pr-5 pt-3 flex flex-col gap-2">
+                <p>Jurusan Perkebunan Kelapa Sawit di Indonesia Prospek Kerja, Mata Kuliah, dan Kampus Pilihan di Pontianak</p>
+                <p class="text-[12px] font-DSans">30/5/2026 - Reyven Edward Michael</p>
+            </div>
+        </div>
+        <div class="w-100 h-120 rounded-[20px] overflow-hidden flex flex-col cursor-pointer shadow-lg/30" onclick="window.location.href='https://www.polteq.ac.id/index.php?page=artikel&&action=detail&&id=80'">
+            <img src="https://www.polteq.ac.id/public/images/artikel/11_39_02_2026_04_16_Penyerahan_Bantuan_Program_BRI_Peduli_dari_Bank_BRI_kepada_Politeknik_Tonggak_Equator_Pontianak1.jpg" alt="" class="w-full h-[75%] object-cover object-top">
+            <div class="w-full h-full bg-[#001ba3] text-white font-DSansBold pl-5 pr-5 pt-3 flex flex-col gap-2">
+                <p>Penyerahan Bantuan Program BRI Peduli dari Bank BRI kepada Politeknik Tonggak Equator Pontianak</p>
+                <p class="text-[12px] font-DSans">14/4/2026 - POLTEQ</p>
+            </div>
+        </div>
+        <div class="w-100 h-120 rounded-[20px] overflow-hidden flex flex-col cursor-pointer shadow-lg/30" onclick="window.location.href='https://www.polteq.ac.id/index.php?page=artikel&&action=detail&&id=79'">
+            <img src="https://www.polteq.ac.id/public/images/artikel/11_45_15_2026_04_09_Penandatanganan_Kerja_Sama_Politeknik_Tonggak_Equator_Pontianak_dan_KSP_CU_Pancur_Kasih1.jpg" alt="" class="w-full h-[75%] object-cover object-top">
+            <div class="w-full h-full bg-[#001ba3] text-white font-DSansBold pl-5 pr-5 pt-3 flex flex-col gap-2">
+                <p>Penandatanganan Kerja Sama Politeknik Tonggak Equator Pontianak dan KSP CU Pancur Kasih</p>
+                <p class="text-[12px] font-DSans">09/04/2026 - POLTEQ</p>
+            </div>
+        </div>
+        <div class="w-100 h-120 rounded-[20px] overflow-hidden flex flex-col cursor-pointer shadow-lg/30" onclick="window.location.href='https://www.polteq.ac.id/index.php?page=artikel&&action=detail&&id=78'">
+            <img src="https://www.polteq.ac.id/public/images/artikel/08_05_52_2025_12_19_Politeknik_Tonggak_Equator_(POLTEQ)_Lakukan_Audiensi_dengan_Dinas_Perkebunan_dan_Peternakan_Provinsi_Kalimantan_Barat1.jpg" alt="" class="w-full h-[75%] object-cover object-top">
+            <div class="w-full h-full bg-[#001ba3] text-white font-DSansBold pl-5 pr-5 pt-3 flex flex-col gap-2">
+                <p>Politeknik Tonggak Equator (POLTEQ) Lakukan Audiensi dengan Dinas Perkebunan dan Peternakan Provinsi Kalimantan Barat</p>
+                <p class="text-[12px] font-DSans">09/12/2025 - POLTEQ</p>
+            </div>
+        </div>
+        <div class="w-100 h-120 rounded-[20px] overflow-hidden flex flex-col cursor-pointer shadow-lg/30" onclick="window.location.href='https://www.polteq.ac.id/index.php?page=artikel&&action=detail&&id=76'">
+            <img src="https://polteq.ac.id/public/images/artikel/11_20_58_2025_11_25_Dosen_dan_Tendik_POLTEQ_Lolos_Program_Sertifikasi_Kompetensi_Dosen_dan_Tenaga_Kependidikan_2025_dari_Kementerian_Pendidikan_Tinggi,_Sains,_dan_Teknologi1.jpg" alt="" class="w-full h-[75%] object-cover object-top">
+            <div class="w-full h-full bg-[#001ba3] text-white font-DSansBold pl-5 pr-5 pt-3 flex flex-col gap-2">
+                <p class="text-[13.5px]">Dosen dan Tendik POLTEQ Lolos Program Sertifikasi Kompetensi Dosen dan Tenaga Kependidikan 2025 dari Kementerian Pendidikan Tinggi, Sains, dan Teknologi</p>
+                <p class="text-[12px] font-DSans">25/11/2025 - POLTEQ</p>
+            </div>
+        </div>
+        <div class="w-100 h-120 rounded-[20px] overflow-hidden flex flex-col cursor-pointer shadow-lg/30" onclick="window.location.href='https://www.polteq.ac.id/index.php?page=artikel&&action=detail&&id=77'">
+            <img src="https://polteq.ac.id/public/images/artikel/02_43_12_2025_11_24_POLITEKNIK_TONGGAK_EQUATOR_RESMI_BUKA_PROGRAM_STUDI_BARU:_TEKNOLOGI_PRODUKSI_TANAMAN_PERKEBUNAN_(KELAPA_SAWIT)1.jpg" alt="" class="w-full h-[75%] object-cover object-top">
+            <div class="w-full h-full bg-[#001ba3] text-white font-DSansBold pl-5 pr-5 pt-3 flex flex-col gap-2">
+                <p class="">POLITEKNIK TONGGAK EQUATOR RESMI BUKA PROGRAM STUDI BARU: TEKNOLOGI PRODUKSI TANAMAN PERKEBUNAN (KELAPA SAWIT)</p>
+                <p class="text-[12px] font-DSans">25/11/2025 - POLTEQ</p>
+            </div>
+        </div>
+        <div class="w-100 h-120 rounded-[20px] overflow-hidden flex flex-col cursor-pointer shadow-lg/30" onclick="window.location.href='https://www.polteq.ac.id/index.php?page=artikel&&action=detail&&id=75'">
+            <img src="https://polteq.ac.id/public/images/artikel/01_06_43_2024_09_03_Tim_Mahasiswa_Prodi_Teknologi_Pangan_Siap_Berinovasi_dan_Membangun_Negeri_Lewat_Program_Ormawa_Membangun_Negeri_(POMN)_Tahun_20241.jpg" alt="" class="w-full h-[75%] object-cover object-top">
+            <div class="w-full h-full bg-[#001ba3] text-white font-DSansBold pl-5 pr-5 pt-3 flex flex-col gap-2">
+                <p class="text-[13.5px]">Tim Mahasiswa Prodi Teknologi Pangan Siap Berinovasi dan Membangun Negeri Lewat Program Ormawa Membangun Negeri (POMN) Tahun 2024</p>
+                <p class="text-[12px] font-DSans">03/09/2024 - POLTEQ</p>
+            </div>
+        </div>
+        <div class="w-100 h-120 rounded-[20px] overflow-hidden flex flex-col cursor-pointer shadow-lg/30" onclick="window.location.href='https://www.polteq.ac.id/index.php?page=artikel&&action=detail&&id=74'">
+            <img src="https://www.polteq.ac.id/public/images/artikel/12_12_28_2024_09_02_Lokakarya_Penerapan_Materialisme_dalam_Pengajaran_Bahasa_Inggris_Bersama_Prof._Dr._Setiono_Sugiharto_dari_UNIKA%C2%A0Atma%C2%A0Jaya1.jpg" alt="" class="w-full h-[75%] object-cover object-top">
+            <div class="w-full h-full bg-[#001ba3] text-white font-DSansBold pl-5 pr-5 pt-3 flex flex-col gap-2">
+                <p class="">Lokakarya Penerapan Materialisme dalam Pengajaran Bahasa Inggris Bersama Prof. Dr. Setiono Sugiharto dari UNIKA Atma Jaya</p>
+                <p class="text-[12px] font-DSans">02/09/2024 - POLTEQ</p>
+            </div>
+        </div>
+        <div class="w-100 h-120 rounded-[20px] overflow-hidden flex flex-col cursor-pointer shadow-lg/30" onclick="window.location.href='https://www.polteq.ac.id/index.php?page=artikel&&action=detail&&id=73'">
+            <img src="https://www.polteq.ac.id/public/images/artikel/10_22_05_2024_08_29_Maria_Lestari,_Anggota_DPR_RI,_Kunjungi_POLTEQ_dan_Berikan_Dukungan_Bibit_Tanaman1.jpg" alt="" class="w-full h-[75%] object-cover object-top">
+            <div class="w-full h-full bg-[#001ba3] text-white font-DSansBold pl-5 pr-5 pt-3 flex flex-col gap-2">
+                <p class="">Maria Lestari, Anggota DPR RI, Kunjungi POLTEQ dan Berikan Dukungan Bibit Tanaman</p>
+                <p class="text-[12px] font-DSans">29/08/2024 - POLTEQ</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-20 relative flex justify-center items-center w-full cursor-pointer">
+        <button class="bg-[#001ba3] p-2 rounded-[10px] hover:bg-[#001370] cursor-pointer" onclick="window.location.href='https://www.polteq.ac.id/index.php?page=artikel'">
+            <p class="font-DSansBold text-[15px] text-white">Lihat lebih banyak</p>
+        </button>
+    </div>
+
+    <footer>
+        <div class="bg-[#001ba3] w-full h-[300px] mt-25 relative flex flex-row font-DSans text-white gap-15 pl-5 pt-3">
+            <div class="relative flex flex-col gap-3">
+                <p class="text-[25px] font-DSansBold">Hubungi Kami</p>
+                <div class="relative flex flex-col gap-3">
+                    <div class="relative flex flex-row gap-3" onclick="goPolteq()">
+                        <img src="img/Website.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="https://polteq.ac.id" class="">polteq.ac.id</a>
+                    </div>
+                    <div class="relative flex flex-row gap-3">
+                        <img src="img/kontak.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="" class="">+62-851-6757-5775</a>
+                    </div>
+                    <div class="relative flex flex-row gap-3 items-center" onclick="goPolteqLoc()">
+                        <img src="img/location.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="https://maps.app.goo.gl/vkoQz7V5Ne7s6CF86" class="">Jl. Fatimah <br>No.1-2, Pontianak</a>
+                    </div>
+                    <div class="relative flex flex-row gap-3 items-center">
+                        <img src="img/email.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="" class="">pmb@polteq.ac.id</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative flex flex-col gap-3">
+                <p class="text-[25px] font-DSansBold">Media Sosial</p>
+                <div class="relative flex flex-col gap-3">
+                    <div class="relative flex flex-row gap-3">
+                        <img src="img/instagram.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">@politeknik_tonggak_equator</a>
+                    </div>
+                    <div class="relative flex flex-row gap-3">
+                        <img src="img/tiktok.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="https://www.instagram.com/politeknik_tonggak_equator/" class="">@polteq</a>
+                    </div>
+                    <div class="relative flex flex-row gap-3">
+                        <img src="img/youtube.webp" alt="" class="w-[25px] h-[25px] bg-contain invert">
+                        <a href="https://www.youtube.com/@polteqpontianak" class="">Politeknik Tonggak Equator</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="">
+                <p class="text-[25px] font-DSansBold">Informasi</p>
+                <div class="relative flex flex-col gap-3">
+                    <a href="https://www.polteq.ac.id/index.php?page=pmb" class="">PMB dan Beasiswa</a>
+                    <a href="https://www.polteq.ac.id/index.php?page=fasilitas" class="">Fasilitas</a>
+                    <a href="./berita.html" class="">Berita</a>
+                </div>
+            </div>
+
+            <div class="">
+                <p class="text-[25px] font-DSansBold">Program Studi</p>
+                <div class="relative flex flex-col gap-3">
+                    <a href="./ebpc.html" class="">English For Business and Proffesional Communication</a>
+                    <a href="./biskref.html" class="">Bisnis Kreatif</a>
+                    <a href="./tp.html" class="">Tenkologi Pangan</a>
+                    <a href="" class="">Teknologi Produksi Tanaman Perkebunan</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-[#001ba3] w-full h-full font-DSans text-white relative flex justify-center items-center pb-5">
+                <p class="">&copy; Copyright by Politeknik Tonggak Equator. All right reserved.</p>
+        </div>
+    </footer>
+
+    <!--Gsap-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <!--Alpine-->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        // Alpine
+        document.addEventListener('alpine:init', () => {
+
+            // Parent Dropdown
+
+            Alpine.data('mode', () => ({
+                mode : null
+            }))
+
+            // Child Dropdown
+
+            Alpine.data('dropdown', (nameMode) => ({
+                status : false,
+                name : nameMode,
+
+                init () {
+                    gsap.set(this.$refs.menu, {
+                        autoAlpha : 0
+                    })
+
+                    this.$watch('mode', (value) => {
+                        if(value == this.name){
+                            gsap.to(this.$refs.menu, {
+                                duration : 0.5,
+                                autoAlpha : 1,
+                                overwrite : true
+                            })
+                        } else {
+                            gsap.to(this.$refs.menu, {
+                                duration : 0.5,
+                                autoAlpha : 0,
+                                overwrite : true
+                            })
+                        }
+                    })
+                },
+
+                openToogle () {
+                    this.mode = this.name
+                },
+
+                closeToogle () {
+                    this.mode = null
+                }
+            }))
+        })
+    </script>
 </body>
 </html>

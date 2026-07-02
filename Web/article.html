@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurusan Perkebunan Kelapa Sawit di Indonesia</title>
+    <link rel="stylesheet" href="src/output.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./img/POLTEQ-BG.webp">
+</head>
+<body class="w-full flex flex-col justify-center items-center overflow-x-hidden" x-data="sideBar">
+
+    <div class="absolute bg-black w-screen h-screen top-0 opacity-[0.5]" id="anim-4" x-cloak></div>
+    <div class="absolute w-screen h-screen top-0 flex flex-row justify-end" id="set-1" x-cloak>
+        <div class="bg-white h-full flex flex-col pl-5 pt-3 font-DSansBold" id="anim-5" x-cloak>
+            <div class="flex justify-end pr-5">
+                <img src="./img/cancel.webp" alt="" class="object-contain w-[35px] cursor-pointer" @click="closeSide">
+            </div>
+            <a href="./index.html" class="text-[25px]">Home</a>
+            <div class="" x-data="dropdown" @default.window="setDefault">
+                <p class="text-[25px] cursor-pointer" @click="checkDropdown">Program Studi</p>
+                <div class="flex flex-col pl-3 font-DSans overflow-hidden" x-ref="drop">
+                    <p class="hover:bg-blue-300 cursor-pointer pt-2 pb-2 pl-3" onclick="goEbpc()">English for Bussiness and Proffesional Communication</p>
+                    <p class="hover:bg-blue-300 cursor-pointer pt-2 pb-2 pl-3" onclick="goBiskref()">Bisnis Kreatif</p>
+                    <p class="hover:bg-blue-300 cursor-pointer pt-2 pb-2 pl-3" onclick="goTp()">Teknologi Pangan</p>
+                    <p class="hover:bg-blue-300 cursor-pointer pt-2 pb-2 pl-3" onclick="">Teknologi Produksi Tanaman Perkebunan</p>
+                </div>
+            </div>
+            <div class="" x-data="dropdown" @default.window="setDefault">
+                <p class="text-[25px] cursor-pointer" @click="checkDropdown">Informasi</p>
+                <div class="flex flex-col pl-3 font-DSans overflow-hidden" x-ref="drop">
+                    <a class="hover:bg-blue-300 cursor-pointer pt-2 pb-2 pl-3" href="./berita.html">Berita</a>
+                    <a class="hover:bg-blue-300 cursor-pointer pt-2 pb-2 pl-3" href="https://www.polteq.ac.id/index.php?page=fasilitas">Fasilitas</a>
+                    <a class="hover:bg-blue-300 cursor-pointer pt-2 pb-2 pl-3" href="https://www.polteq.ac.id/index.php?page=pmb">PMB dan Beasiswa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nav -->
+    <div class="w-full h-[13%] absolute top-0 flex flex-row justify-between z-3">
+        <div class="pl-5 relative flex flex-row items-center gap-3 cursor-pointer" onclick="goPolteq()">
+            <img src="./img/POLTEQ-BG.webp" alt="" class="w-[100px] h-[100px] object-contain">
+            <div class="relative flex flex-col text-white">
+                <p class="font-DSansBold text-[25px]">Politeknik Tonggak Equator</p>
+                <p class="font-DSans text-[18px]">POLTEQ Means Quality</p>
+            </div>
+        </div>
+        <div class="pr-10 relative flex flex-row justify-center items-center">
+            <img src="./img/Circled Menu.webp" alt="" class="w-[45px] h-[45px] object-contain cursor-pointer" @click="openSide">
+        </div>
+    </div>
+
+    <!-- Header -->
+    <div class="w-screen h-screen relative flex flex-col overflow-hidden" id="anim-1">
+        <!-- Vid -->
+        <video src="./vid/vid-1-compressed.mp4" class="w-full h-full object-cover relative z-1" autoplay muted loop></video>
+
+        <!-- Black-Background -->
+        <div class="absolute w-full h-full z-2 bg-black opacity-50"></div>
+
+        <!-- Title -->
+        <div class="w-full h-screen z-3 absolute text-white flex justify-center items-center flex-col gap-5" id="anim-2">
+            <h1 class="font-TommyExBold text-[75px]/22 text-center tracking-wide">Jurusan Perkebunan<br>Kelapa Sawit di Indonesia</h1>
+            <p class="font-TommyLight text-[25px]">Prospek Kerja, Mata Kuliah, dan Kampus Pilihan di Pontianak</p>
+        </div>
+    </div>
+
+    <!-- Body -->
+    <div class="w-[95%] flex flex-row items-center justify-start mt-15 items-stretch" id="anim-3">
+        <!-- Profil side -->
+        <div class="w-[5%] flex flex-col pl-5 gap-5">
+            <!-- <div class="bg-[#ff765e] rounded-[50%] size-[50px] shadow-lg/25 flex justify-center items-center cursor-pointer" onclick="goEmail()">
+                <img src="./img/Email-logo.png" alt="" class="size-[30px] object-contain">
+            </div> -->
+            <!-- <div class="bg-[#66ff75] rounded-[50%] size-[50px] shadow-lg/25 flex justify-center items-center">
+                <img src="./img/Whatsapp-logo.png" alt="" class="h-full w-full object-contain">
+            </div> -->
+            <div class="bg-[#858585] rounded-[50%] size-[50px] shadow-lg/25 flex justify-center items-center cursor-pointer" onclick="goGit()">
+                <img src="./img/Git-logo.webp" alt="" class="h-full w-full object-contain">
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="w-[60%] ml-30 flex flex-col justify-start">
+
+            <!-- Profil -->
+            <div class="w-full flex flex-row gap-5">
+                <img src="./img/Dante.webp" alt="" class="size-[50px] object-contain rounded-full">
+                <div class="text-black flex flex-col w-full">
+                    <p class="font-DSansBold text-[20px]">Reyven Edward Michael</p>
+                    <p class="font-DSans text-[15px]">Penulis</p>
+                </div>
+            </div>
+
+            <!-- Article -->
+            <div class="w-full mt-10">
+                <p class="font-DSans text-[18px]/10 indent-15"><span class="font-DSansBold text-[40px]/10">I</span>ndustri perkebunan merupakan salah satu sektor penting yang mendukung perekonomian Indonesia. Sebagai negara penghasil kelapa sawit terbesar di dunia, kebutuhan akan tenaga profesional di bidang perkebunan terus meningkat setiap tahunnya. Tidak heran jika banyak calon mahasiswa mulai mencari informasi mengenai jurusan perkebunan kelapa sawit, prospek kerjanya, hingga universitas yang menyediakan program studi tersebut.
+Salah satu pilihan pendidikan vokasi yang dapat dipertimbangkan adalah Program Studi Teknologi Produksi Tanaman Perkebunan (TPTP) di Politeknik Tonggak Equator (POLTEQ) Pontianak. Program studi ini dirancang untuk menghasilkan lulusan yang siap bekerja dan memiliki keterampilan praktis sesuai kebutuhan industri perkebunan modern.
+</p>
+            </div>
+
+            <h2 class="font-DSansBold text-[25px] mt-10">Apa Itu Jurusan Teknologi Produksi Tanaman Perkebunan?</h2>
+
+            <img src="./svg/woman-sees-the-results-of-the-plant-tissue-culture-process.svg" alt="" class="w-full object-contain relative right-15 bottom-10">
+
+            <a href="" class="font-DSans text-[15px]">Sumber : iconscout.com</a>
+
+            <div class="w-full mt-5">
+                <p class="font-DSans text-[18px]/10 indent-15"><span class="font-DSansBold text-[40px]/10">J</span>urusan Teknologi Produksi Tanaman Perkebunan merupakan program studi yang mempelajari teknik budidaya, pengelolaan, serta pengembangan tanaman perkebunan secara profesional. Mahasiswa tidak hanya belajar teori di kelas, tetapi juga mendapatkan pengalaman praktik langsung di lapangan.</p>
+            </div>
+
+            <p class="font-DSans text-[18px] mt-5">Materi yang dipelajari umumnya meliputi:</p>
+
+            <ul class="mt-3 font-DSans text-[17px] flex flex-col gap-3 list-disc ml-15">
+                <li class="">Dasar-dasar agronomi</li>
+                <li class="">Budidaya kelapa sawit</li>
+                <li class="">Budidaya karet dan tanaman perkebunan lainnya</li>
+                <li class="">Pengendalian hama dan penyakit tanaman</li>
+                <li class="">Teknologi pemupukan</li>
+                <li class="">Manajemen perkebunan</li>
+                <li class="">Keselamatan dan kesehatan kerja (K3)</li>
+                <li class="">Pengelolaan lingkungan perkebunan</li>
+            </ul>
+
+            <p class="font-DSans text-[18px]/10 mt-7">Dengan kombinasi teori dan praktik tersebut, lulusan memiliki kompetensi yang sesuai dengan kebutuhan perusahaan perkebunan nasional maupun internasional.</p>
+
+            <h2 class="font-DSansBold text-[25px] mt-10">Jurusan Perkebunan Kerja Apa?</h2>
+
+            <img src="./img/side-view-two-young-farmers-cultivating-strawberry-greenhouse.webp" alt="" class="w-full h-[500px] object-contain mt-5">
+
+            <a href="" class="font-DSans text-[15px] mt-3">Sumber : https://www.magnific.com/free-photo/side-view-two-young-farmers-cultivating-strawberry-greenhouse_5765968.htm#fromView=keyword&page=1&position=6&uuid=a87c9be3-0189-426e-891d-564c75800bc3&query=Farmers</a>
+
+            <div class="w-full mt-10">
+                <p class="font-DSans text-[18px]/10 indent-15"><span class="font-DSansBold text-[40px]/10">S</span>alah satu pertanyaan yang paling sering diajukan calon mahasiswa adalah, "Jurusan perkebunan kerja apa?"
+Lulusan jurusan perkebunan memiliki peluang karier yang cukup luas, terutama karena sektor agribisnis dan perkebunan terus berkembang di Indonesia. Beberapa profesi yang dapat ditekuni antara lain:
+</p>
+            </div>
+
+            <ol class="mt-3 font-DSans text-[17px] flex flex-col gap-3 list-decimal ml-15">
+                <li>Asisten Perkebunan</li>
+                <li>Supervisor Lapangan</li>
+                <li>Field Assistant Kelapa Sawit</li>
+                <li>Quality Control Perkebunan</li>
+                <li>Wirausahawan Agribisnis</li>
+                <li>Konsultan atau Penyuluh Pertanian</li>
+            </ol>
+
+            <!-- <div class="w-full flex justify-center items-center mt-8">
+                <button class="bg-[#bdf797] pt-3 pb-3 pl-5 pr-5 rounded-[25px] shadow-md/25 font-DsansBold">Klik untuk melihat lebih detail</button>
+            </div> -->
+
+            <h2 class="font-DSansBold text-[25px] mt-10">Jurusan Perkebunan Ada di Universitas Mana Saja?</h2>
+
+            <div class="w-full mt-10">
+                <p class="font-DSans text-[18px]/10 indent-15"><span class="font-DSansBold text-[40px]/10">B</span>anyak calon mahasiswa juga mencari informasi mengenai jurusan perkebunan ada di universitas mana saja. Di Indonesia, program studi yang berhubungan dengan perkebunan dapat ditemukan di berbagai perguruan tinggi, baik negeri maupun swasta.
+Namun, bagi calon mahasiswa yang ingin mendapatkan pendidikan berbasis praktik dan dekat dengan pusat industri perkebunan Kalimantan Barat, Program Studi Teknologi Produksi Tanaman Perkebunan (TPTP) di Politeknik Tonggak Equator (POLTEQ) Pontianak menjadi salah satu pilihan yang layak dipertimbangkan.
+Lokasinya yang berada di Kalimantan Barat memberikan keuntungan tersendiri karena mahasiswa dapat lebih dekat dengan aktivitas industri perkebunan yang berkembang pesat di wilayah tersebut.
+</p>
+            </div>
+
+            <div class="relative w-full">
+                <div class="absolute w-full h-full z-2">
+                    <img src="./img/polteq-location.webp" alt="" class="size-[130px] object-contain relative left-48 top-8 z-2" id="polteq-location">
+                    <p class="font-DSansBold text-[18px] absolute z-1 top-18 left-75" id="location-desc">POLTEQ is here!</p>
+                </div>
+                <img src="./img/Screenshot 2026-06-01 141634.webp" alt="" class="w-full object-contain mt-20" id="location">
+            </div>
+
+            <h2 class="font-DSansBold text-[25px] mt-10">Mengapa Memilih TPTP di POLTEQ Pontianak?</h2>
+
+            <div class="w-full mt-10">
+                <p class="font-DSans text-[18px]/10 indent-15"><span class="font-DSansBold text-[40px]/10">P</span>rogram Studi TPTP di POLTEQ memiliki fokus pada pengembangan keterampilan teknis dan kompetensi lapangan yang dibutuhkan industri saat ini.
+Beberapa keunggulan yang ditawarkan antara lain:
+</p>
+            </div>
+
+            <ul class="mt-3 font-DSans text-[17px] flex flex-col gap-3 list-disc ml-15">
+                <li class="">Kurikulum berbasis kebutuhan industri perkebunan</li>
+                <li class="">Porsi praktik yang lebih banyak dibandingkan teori</li>
+                <li class="">Pembelajaran langsung dengan studi kasus di lapangan</li>
+                <li class="">Dosen yang memiliki pengalaman akademik dan industri</li>
+                <li class="">Peluang magang di perusahaan perkebunan</li>
+                <li class="">Mendukung pengembangan kompetensi profesional mahasiswa</li>
+            </ul>
+
+            <p class="font-DSans text-[18px] mt-5">Dengan pendekatan pendidikan vokasi, mahasiswa dipersiapkan untuk siap kerja setelah lulus.</p>
+
+            <h2 class="font-DSansBold text-[25px] mt-10">Peluang Industri Perkebunan di Indonesia</h2>
+
+            <img src="./img/business-agreement-shaking-hands-melon-plantation.webp" alt="" class="w-full h-[500px] object-contain mt-5">
+
+            <a href="" class="font-DSans text-[15px] mt-3">Sumber : https://www.magnific.com/free-photo/business-agreement-shaking-hands-melon-plantation_4668723.htm#fromView=search&page=1&position=0&uuid=67dbb327-a863-48a5-b2f9-739b403a8a2c&query=plantation+business</a>
+
+            <div class="w-full mt-10">
+                <p class="font-DSans text-[18px]/10 indent-15"><span class="font-DSansBold text-[40px]/10">I</span>ndonesia merupakan salah satu negara dengan potensi perkebunan terbesar di dunia. Komoditas seperti kelapa sawit, karet, kakao, kopi, dan berbagai tanaman perkebunan lainnya terus memberikan kontribusi besar terhadap perekonomian nasional.
+Pertumbuhan sektor ini membuat kebutuhan tenaga kerja yang kompeten semakin meningkat. Oleh karena itu, lulusan jurusan perkebunan memiliki peluang karier yang menjanjikan dalam jangka panjang.
+</p>
+            </div>
+
+            <h2 class="font-DSansBold text-[25px] mt-10">Kesimpulan</h2>
+
+            <div class="w-full mt-10">
+                <p class="font-DSans text-[18px]/10 indent-15"><span class="font-DSansBold text-[40px]/10">B</span>agi Anda yang sedang mencari informasi mengenai jurusan perkebunan di Indonesia, jurusan perkebunan kelapa sawit, atau ingin mengetahui jurusan perkebunan kerja apa, Program Studi Teknologi Produksi Tanaman Perkebunan (TPTP) di Politeknik Tonggak Equator (POLTEQ) Pontianak dapat menjadi pilihan yang tepat.
+Melalui kurikulum yang berorientasi pada praktik dan kebutuhan industri, mahasiswa dibekali kompetensi yang relevan untuk menghadapi dunia kerja. Selain itu, berkembangnya sektor perkebunan Indonesia membuka peluang karier yang luas bagi para lulusan di masa depan.
+</p>
+            </div>
+
+        </div>
+        
+        <!-- Aside -->
+        <div class=""></div>
+    </div>
+
+    <div class="relative w-full">
+        <img src="./img/177809435_9a3b3f68-f2c5-4258-8cc2-f6d83836ac33.webp" alt="" class="object-cover object-top h-[450px] w-full mt-70" id="footer">
+    </div>
+
+    <!-- <footer class="bg-[#8CBD2E] w-full pb-10"></footer> -->
+
+    <!-- Gsap -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+
+    <!--Alpine-->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
