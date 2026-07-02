@@ -2,7 +2,7 @@ gsap.registerPlugin(SplitText)
 
 // Function
 function goBiskref() {
-    window.location.href = './Web/biskref.html'
+    window.location.href = './biskref.html'
 }
 
 function goPolteq (){
@@ -10,11 +10,11 @@ function goPolteq (){
 }
 
 function goEbpc () {
-    window.location.href ='./Web/ebpc.html'
+    window.location.href ='./ebpc.html'
 }
 
 function goTp () {
-    window.location.href ='./Web/tp.html'
+    window.location.href ='./tp.html'
 }
 
 function goPolteqLoc () {
