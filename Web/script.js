@@ -13,15 +13,15 @@ function goGit () {
 }
 
 function goBiskref() {
-    window.location.pathname = './biskref.html'
+    window.location.pathname = 'https://ken-jet.github.io/Web/biskref.html'
 }
 
 function goEbpc () {
-    window.location.pathname ='./ebpc.html'
+    window.location.pathname ='https://ken-jet.github.io/Web/ebpc.html'
 }
 
 function goTp () {
-    window.location.pathname ='./tp.html'
+    window.location.pathname ='https://ken-jet.github.io/Web/tp.html'
 }
 
 function goPolteqLoc () {
